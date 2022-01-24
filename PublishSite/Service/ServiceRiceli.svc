@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="_1_WebForm.Service.ServiceRiceli" CodeBehind="ServiceRiceli.svc.cs" %>

@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes"?>
+<GRUPOS>
+  <Grupo>
+    <gru_id>2436</gru_id>
+    <gru_nome>GRUPOS</gru_nome>
+    <gru_bloquear>false</gru_bloquear>
+    <gru_subBloquear>false</gru_subBloquear>
+    <gru_posicao>0</gru_posicao>
+    <Grupo>
+      <gru_id>2443</gru_id>
+      <gru_nome>Roupas</gru_nome>
+      <gru_pai>2436</gru_pai>
+      <gru_bloquear>false</gru_bloquear>
+      <gru_subBloquear>false</gru_subBloquear>
+      <gru_posicao>0</gru_posicao>
+      <Grupo>
+        <gru_id>4464</gru_id>
+        <gru_nome>TESTE DE GRUPO</gru_nome>
+        <gru_pai>2443</gru_pai>
+        <gru_bloquear>true</gru_bloquear>
+        <gru_subBloquear>false</gru_subBloquear>
+        <gru_posicao>0</gru_posicao>
+        <Grupo>
+          <gru_id>4465</gru_id>
+          <gru_nome>TESTE DE GRUPO A</gru_nome>
+          <gru_pai>4464</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>true</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+          <Grupo>
+            <gru_id>4466</gru_id>
+            <gru_nome>TESTE DE GRUPO B</gru_nome>
+            <gru_pai>4465</gru_pai>
+            <gru_bloquear>false</gru_bloquear>
+            <gru_subBloquear>true</gru_subBloquear>
+            <gru_posicao>0</gru_posicao>
+          </Grupo>
+        </Grupo>
+        <Grupo>
+          <gru_id>4467</gru_id>
+          <gru_nome>TESTE DE GRUPO A2</gru_nome>
+          <gru_pai>4464</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>true</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+        <Grupo>
+          <gru_id>4468</gru_id>
+          <gru_nome>TESTE DE GRUPO A3</gru_nome>
+          <gru_pai>4464</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>true</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+      </Grupo>
+      <Grupo>
+        <gru_id>2444</gru_id>
+        <gru_nome>Homens</gru_nome>
+        <gru_pai>2443</gru_pai>
+        <gru_bloquear>false</gru_bloquear>
+        <gru_subBloquear>false</gru_subBloquear>
+        <gru_posicao>0</gru_posicao>
+        <Grupo>
+          <gru_id>3484</gru_id>
+          <gru_nome>Manga Curta</gru_nome>
+          <gru_pai>2444</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+        <Grupo>
+          <gru_id>3474</gru_id>
+          <gru_nome>Manga Longa</gru_nome>
+          <gru_pai>2444</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+      </Grupo>
+      <Grupo>
+        <gru_id>3482</gru_id>
+        <gru_nome>Mulheres</gru_nome>
+        <gru_pai>2443</gru_pai>
+        <gru_bloquear>false</gru_bloquear>
+        <gru_subBloquear>false</gru_subBloquear>
+        <gru_posicao>1</gru_posicao>
+        <Grupo>
+          <gru_id>3483</gru_id>
+          <gru_nome>Manga Longa</gru_nome>
+          <gru_pai>3482</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+        <Grupo>
+          <gru_id>3485</gru_id>
+          <gru_nome>Manga Curta</gru_nome>
+          <gru_pai>3482</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+      </Grupo>
+      <Grupo>
+        <gru_id>3457</gru_id>
+        <gru_nome>Meninos</gru_nome>
+        <gru_pai>2443</gru_pai>
+        <gru_bloquear>false</gru_bloquear>
+        <gru_subBloquear>false</gru_subBloquear>
+        <gru_posicao>2</gru_posicao>
+        <Grupo>
+          <gru_id>3486</gru_id>
+          <gru_nome>Manga Longa</gru_nome>
+          <gru_pai>3457</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+        <Grupo>
+          <gru_id>3487</gru_id>
+          <gru_nome>Manga Curta</gru_nome>
+          <gru_pai>3457</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+      </Grupo>
+      <Grupo>
+        <gru_id>3465</gru_id>
+        <gru_nome>Meninas</gru_nome>
+        <gru_pai>2443</gru_pai>
+        <gru_bloquear>false</gru_bloquear>
+        <gru_subBloquear>false</gru_subBloquear>
+        <gru_posicao>3</gru_posicao>
+        <Grupo>
+          <gru_id>3488</gru_id>
+          <gru_nome>Manga Longa</gru_nome>
+          <gru_pai>3465</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+        <Grupo>
+          <gru_id>3489</gru_id>
+          <gru_nome>Manga Curta</gru_nome>
+          <gru_pai>3465</gru_pai>
+          <gru_bloquear>false</gru_bloquear>
+          <gru_subBloquear>false</gru_subBloquear>
+          <gru_posicao>0</gru_posicao>
+        </Grupo>
+      </Grupo>
+    </Grupo>
+  </Grupo>
+</GRUPOS>

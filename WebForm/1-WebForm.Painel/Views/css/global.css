@@ -1,0 +1,25 @@
+﻿     /*produtos*/
+        .productItem
+        {
+            width: 340px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+        }
+        .groupSeparator
+        {
+            border-top: 1px dotted Gray;
+            height: 1px;
+            clear: both;
+            
+        }
+        .itemSeparator
+        {
+            height: 180px;
+            width: 1px;
+            border-left: 1px dotted Gray;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            float: left;
+        }

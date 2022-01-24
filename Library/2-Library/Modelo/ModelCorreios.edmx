@@ -1,0 +1,1223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CorreiosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Correios.dbo.ATUALIZACOES_CONFIG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ATUALIZACOES_CONFIG">
+          <Key>
+            <PropertyRef Name="SERV_ID" />
+            <PropertyRef Name="ATU_ATIVA" />
+          </Key>
+          <Property Name="ATU_WS_URL" Type="varchar" MaxLength="250" />
+          <Property Name="ATU_SKIN_XML" Type="text" />
+          <Property Name="ATU_LIMIT_EXEC" Type="int" />
+          <Property Name="ATU_FREQUENCIA" Type="int" />
+          <Property Name="ATU_TIPOCONFIG" Type="varchar" MaxLength="25" />
+          <Property Name="SERV_ID" Type="int" Nullable="false" />
+          <Property Name="ATU_ATIVA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FRETE">
+          <Key>
+            <PropertyRef Name="FRE_ID" />
+          </Key>
+          <Property Name="FRE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FRE_SERVICO" Type="varchar" MaxLength="50" />
+          <Property Name="FRE_NOME" Type="varchar" MaxLength="50" />
+          <Property Name="FRE_REGIAO" Type="varchar" MaxLength="150" />
+          <Property Name="FRE_PRAZO" Type="int" />
+          <Property Name="FRE_PESO" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="FRE_VALOR" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="FRE_CEPORIGEM" Type="varchar" MaxLength="50" />
+          <Property Name="FRE_CEPDESTINO_INI" Type="int" />
+          <Property Name="FRE_CEPDESTINO_FIM" Type="int" />
+          <Property Name="FRE_CEP_DET_REF" Type="int" />
+          <Property Name="FRE_DATAHORAATUALIZACAO" Type="datetime" />
+          <Property Name="FRE_CEPINVALIDO" Type="bit" Nullable="false" />
+          <Property Name="FRE_MSGERRO" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="LOG_BAIRRO">
+          <Key>
+            <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="BAI_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="BAI_NO" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="BAI_NO_ABREV" Type="nvarchar" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="LOG_CONTROLE">
+          <Key>
+            <PropertyRef Name="Versao" />
+          </Key>
+          <Property Name="Versao" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Data" Type="datetime" />
+          <Property Name="Compl1" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LOG_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="CPC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="CPC_NO" Type="nvarchar" MaxLength="96" Nullable="false" />
+          <Property Name="CPC_ENDERECO" Type="nvarchar" MaxLength="108" Nullable="false" />
+          <Property Name="CPC_TIPO" Type="nvarchar" MaxLength="2" />
+          <Property Name="CPC_ABRANGENCIA" Type="nvarchar" MaxLength="80" />
+          <Property Name="CPC_KEY_DNE" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_BAIRRO">
+          <Key>
+            <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            <PropertyRef Name="FCB_NU_ORDEM" />
+          </Key>
+          <Property Name="BAI_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="FCB_NU_ORDEM" Type="int" Nullable="false" />
+          <Property Name="FCB_RAD_INI" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="FCB_SUF_INI" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FCB_RAD_FIM" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="FCB_SUF_FIM" Type="nvarchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+            <PropertyRef Name="CPC_NU_INICIAL" />
+          </Key>
+          <Property Name="CPC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="CPC_NU_INICIAL" Type="int" Nullable="false" />
+          <Property Name="CPC_NU_FINAL" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_LOCALIDADE">
+          <Key>
+            <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="LOC_RAD1_INI" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="LOC_SUF1_INI" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="LOC_RAD1_FIM" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="LOC_SUF1_FIM" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="LOC_RAD2_INI" Type="nvarchar" MaxLength="5" />
+          <Property Name="LOC_SUF2_INI" Type="nvarchar" MaxLength="3" />
+          <Property Name="LOC_RAD2_FIM" Type="nvarchar" MaxLength="5" />
+          <Property Name="LOC_SUF2_FIM" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_UF">
+          <Key>
+            <PropertyRef Name="UFE_SG" />
+          </Key>
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="UFE_NO" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="UFE_RAD1_INI" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="UFE_SUF1_INI" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="UFE_RAD1_FIM" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="UFE_SUF1_FIM" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="UFE_RAD2_INI" Type="nvarchar" MaxLength="5" />
+          <Property Name="UFE_SUF2_INI" Type="nvarchar" MaxLength="3" />
+          <Property Name="UFE_RAD2_FIM" Type="nvarchar" MaxLength="5" />
+          <Property Name="UFE_SUF2_FIM" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_UOP">
+          <Key>
+            <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+            <PropertyRef Name="FNC_NU_INICIAL" />
+          </Key>
+          <Property Name="UOP_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="FNC_NU_INICIAL" Type="int" Nullable="false" />
+          <Property Name="FNC_NU_FINAL" Type="int" />
+          <Property Name="FNC_IN_TIPO" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LOG_GRANDE_USUARIO">
+          <Key>
+            <PropertyRef Name="GRU_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="GRU_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="LOG_NU_SEQUENCIAL" Type="int" />
+          <Property Name="BAI_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="GRU_NO" Type="nvarchar" MaxLength="96" Nullable="false" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="GRU_ENDERECO" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="GRU_KEY_DNE" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="LOG_LOCALIDADE">
+          <Key>
+            <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="LOC_NOSUB" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LOC_NO" Type="nvarchar" MaxLength="60" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="16" />
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_IN_SITUACAO" Type="int" Nullable="false" />
+          <Property Name="LOC_IN_TIPO_LOCALIDADE" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="LOC_NU_SEQUENCIAL_SUB" Type="int" />
+          <Property Name="LOC_KEY_DNE" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="LOG_LOGRADOURO">
+          <Key>
+            <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="LOG_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="LOG_NO" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="LOG_NOME" Type="nvarchar" MaxLength="125" Nullable="false" />
+          <Property Name="BAI_NU_SEQUENCIAL_INI" Type="int" Nullable="false" />
+          <Property Name="BAI_NU_SEQUENCIAL_FIM" Type="int" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LOG_COMPLEMENTO" Type="nvarchar" MaxLength="100" />
+          <Property Name="LOG_TIPO_LOGRADOURO" Type="nvarchar" MaxLength="72" />
+          <Property Name="LOG_STATUS_TIPO_LOG" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="LOG_NO_SEM_ACENTO" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="LOG_KEY_DNE" Type="nvarchar" MaxLength="16" />
+          <Property Name="IND_UOP" Type="nvarchar" MaxLength="1" />
+          <Property Name="IND_GRU" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="LOG_TIPO_LOGR">
+          <Key>
+            <PropertyRef Name="TipoLogradouro" />
+          </Key>
+          <Property Name="TipoLogradouro" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOG_UNID_OPER">
+          <Key>
+            <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="UOP_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="LOG_NU_SEQUENCIAL" Type="int" />
+          <Property Name="BAI_NU_SEQUENCIAL" Type="int" Nullable="false" />
+          <Property Name="UOP_NO" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="UOP_ENDERECO" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="UOP_IN_CP" Type="nvarchar" MaxLength="1" />
+          <Property Name="UOP_KEY_DNE" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="SERVICO">
+          <Key>
+            <PropertyRef Name="SERV_ID" />
+          </Key>
+          <Property Name="SERV_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERV_CODIGO" Type="varchar" MaxLength="15" />
+          <Property Name="SERV_NOME" Type="varchar" MaxLength="80" />
+          <Property Name="SERV_USASENHA" Type="int" Nullable="false" />
+          <Property Name="SERV_COD_EMPRESA" Type="varchar" MaxLength="40" />
+          <Property Name="SERV_SENHA" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_LOG_BAIRRO_LOG_LOCALIDADE">
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="1" />
+          <End Role="LOG_BAIRRO" Type="Self.LOG_BAIRRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_BAIRRO">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_CPC_LOG_LOCALIDADE">
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="1" />
+          <End Role="LOG_CPC" Type="Self.LOG_CPC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_CPC">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO">
+          <End Role="LOG_BAIRRO" Type="Self.LOG_BAIRRO" Multiplicity="1" />
+          <End Role="LOG_FAIXA_BAIRRO" Type="Self.LOG_FAIXA_BAIRRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_CPC_LOG_CPC">
+          <End Role="LOG_CPC" Type="Self.LOG_CPC" Multiplicity="1" />
+          <End Role="LOG_FAIXA_CPC" Type="Self.LOG_FAIXA_CPC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_CPC">
+              <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_CPC">
+              <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE">
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="1" />
+          <End Role="LOG_FAIXA_LOCALIDADE" Type="Self.LOG_FAIXA_LOCALIDADE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_UOP_LOG_UNID_OPER">
+          <End Role="LOG_UNID_OPER" Type="Self.LOG_UNID_OPER" Multiplicity="1" />
+          <End Role="LOG_FAIXA_UOP" Type="Self.LOG_FAIXA_UOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_UNID_OPER">
+              <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_UOP">
+              <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_GRANDE_USUARIO_LOG_BAIRRO">
+          <End Role="LOG_BAIRRO" Type="Self.LOG_BAIRRO" Multiplicity="1" />
+          <End Role="LOG_GRANDE_USUARIO" Type="Self.LOG_GRANDE_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_GRANDE_USUARIO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE">
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="1" />
+          <End Role="LOG_GRANDE_USUARIO" Type="Self.LOG_GRANDE_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_GRANDE_USUARIO">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO">
+          <End Role="LOG_LOGRADOURO" Type="Self.LOG_LOGRADOURO" Multiplicity="0..1" />
+          <End Role="LOG_GRANDE_USUARIO" Type="Self.LOG_GRANDE_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOGRADOURO">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_GRANDE_USUARIO">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_LOCALIDADE_LOG_FAIXA_UF">
+          <End Role="LOG_FAIXA_UF" Type="Self.LOG_FAIXA_UF" Multiplicity="1" />
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_FAIXA_UF">
+              <PropertyRef Name="UFE_SG" />
+            </Principal>
+            <Dependent Role="LOG_LOCALIDADE">
+              <PropertyRef Name="UFE_SG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_LOGRADOURO_LOG_BAIRRO">
+          <End Role="LOG_BAIRRO" Type="Self.LOG_BAIRRO" Multiplicity="1" />
+          <End Role="LOG_LOGRADOURO" Type="Self.LOG_LOGRADOURO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_LOGRADOURO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL_INI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_LOGRADOURO_LOG_LOCALIDADE">
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="1" />
+          <End Role="LOG_LOGRADOURO" Type="Self.LOG_LOGRADOURO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_LOGRADOURO">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_UNID_OPER_LOG_BAIRRO">
+          <End Role="LOG_BAIRRO" Type="Self.LOG_BAIRRO" Multiplicity="1" />
+          <End Role="LOG_UNID_OPER" Type="Self.LOG_UNID_OPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_UNID_OPER">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_UNID_OPER_LOG_LOCALIDADE">
+          <End Role="LOG_LOCALIDADE" Type="Self.LOG_LOCALIDADE" Multiplicity="1" />
+          <End Role="LOG_UNID_OPER" Type="Self.LOG_UNID_OPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_UNID_OPER">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_UNID_OPER_LOG_LOGRADOURO">
+          <End Role="LOG_LOGRADOURO" Type="Self.LOG_LOGRADOURO" Multiplicity="0..1" />
+          <End Role="LOG_UNID_OPER" Type="Self.LOG_UNID_OPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOGRADOURO">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_UNID_OPER">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CorreiosModelStoreContainer">
+          <EntitySet Name="FRETE" EntityType="Self.FRETE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_BAIRRO" EntityType="Self.LOG_BAIRRO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_CONTROLE" EntityType="Self.LOG_CONTROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_CPC" EntityType="Self.LOG_CPC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_FAIXA_BAIRRO" EntityType="Self.LOG_FAIXA_BAIRRO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_FAIXA_CPC" EntityType="Self.LOG_FAIXA_CPC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_FAIXA_LOCALIDADE" EntityType="Self.LOG_FAIXA_LOCALIDADE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_FAIXA_UF" EntityType="Self.LOG_FAIXA_UF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_FAIXA_UOP" EntityType="Self.LOG_FAIXA_UOP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_GRANDE_USUARIO" EntityType="Self.LOG_GRANDE_USUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_LOCALIDADE" EntityType="Self.LOG_LOCALIDADE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_LOGRADOURO" EntityType="Self.LOG_LOGRADOURO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_TIPO_LOGR" EntityType="Self.LOG_TIPO_LOGR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_UNID_OPER" EntityType="Self.LOG_UNID_OPER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICO" EntityType="Self.SERVICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ATUALIZACOES_CONFIG" EntityType="Self.ATUALIZACOES_CONFIG" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ATUALIZACOES_CONFIG].[ATU_WS_URL] AS [ATU_WS_URL], 
+[ATUALIZACOES_CONFIG].[ATU_SKIN_XML] AS [ATU_SKIN_XML], 
+[ATUALIZACOES_CONFIG].[ATU_LIMIT_EXEC] AS [ATU_LIMIT_EXEC], 
+[ATUALIZACOES_CONFIG].[ATU_FREQUENCIA] AS [ATU_FREQUENCIA], 
+[ATUALIZACOES_CONFIG].[ATU_TIPOCONFIG] AS [ATU_TIPOCONFIG], 
+[ATUALIZACOES_CONFIG].[SERV_ID] AS [SERV_ID], 
+[ATUALIZACOES_CONFIG].[ATU_ATIVA] AS [ATU_ATIVA]
+FROM [dbo].[ATUALIZACOES_CONFIG] AS [ATUALIZACOES_CONFIG]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_LOG_BAIRRO_LOG_LOCALIDADE" Association="Self.FK_LOG_BAIRRO_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_CPC_LOG_LOCALIDADE" Association="Self.FK_LOG_CPC_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_CPC" EntitySet="LOG_CPC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO" Association="Self.FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_FAIXA_BAIRRO" EntitySet="LOG_FAIXA_BAIRRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_CPC_LOG_CPC" Association="Self.FK_LOG_FAIXA_CPC_LOG_CPC">
+            <End Role="LOG_CPC" EntitySet="LOG_CPC" />
+            <End Role="LOG_FAIXA_CPC" EntitySet="LOG_FAIXA_CPC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE" Association="Self.FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_FAIXA_LOCALIDADE" EntitySet="LOG_FAIXA_LOCALIDADE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_UOP_LOG_UNID_OPER" Association="Self.FK_LOG_FAIXA_UOP_LOG_UNID_OPER">
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+            <End Role="LOG_FAIXA_UOP" EntitySet="LOG_FAIXA_UOP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_GRANDE_USUARIO_LOG_BAIRRO" Association="Self.FK_LOG_GRANDE_USUARIO_LOG_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_GRANDE_USUARIO" EntitySet="LOG_GRANDE_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE" Association="Self.FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_GRANDE_USUARIO" EntitySet="LOG_GRANDE_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO" Association="Self.FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO">
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+            <End Role="LOG_GRANDE_USUARIO" EntitySet="LOG_GRANDE_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_LOCALIDADE_LOG_FAIXA_UF" Association="Self.FK_LOG_LOCALIDADE_LOG_FAIXA_UF">
+            <End Role="LOG_FAIXA_UF" EntitySet="LOG_FAIXA_UF" />
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_LOGRADOURO_LOG_BAIRRO" Association="Self.FK_LOG_LOGRADOURO_LOG_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_LOGRADOURO_LOG_LOCALIDADE" Association="Self.FK_LOG_LOGRADOURO_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_UNID_OPER_LOG_BAIRRO" Association="Self.FK_LOG_UNID_OPER_LOG_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_UNID_OPER_LOG_LOCALIDADE" Association="Self.FK_LOG_UNID_OPER_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_UNID_OPER_LOG_LOGRADOURO" Association="Self.FK_LOG_UNID_OPER_LOG_LOGRADOURO">
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CorreiosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CorreiosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FRETE" EntityType="CorreiosModel.FRETE" />
+          <EntitySet Name="LOG_BAIRRO" EntityType="CorreiosModel.LOG_BAIRRO" />
+          <EntitySet Name="LOG_CONTROLE" EntityType="CorreiosModel.LOG_CONTROLE" />
+          <EntitySet Name="LOG_CPC" EntityType="CorreiosModel.LOG_CPC" />
+          <EntitySet Name="LOG_FAIXA_BAIRRO" EntityType="CorreiosModel.LOG_FAIXA_BAIRRO" />
+          <EntitySet Name="LOG_FAIXA_CPC" EntityType="CorreiosModel.LOG_FAIXA_CPC" />
+          <EntitySet Name="LOG_FAIXA_LOCALIDADE" EntityType="CorreiosModel.LOG_FAIXA_LOCALIDADE" />
+          <EntitySet Name="LOG_FAIXA_UF" EntityType="CorreiosModel.LOG_FAIXA_UF" />
+          <EntitySet Name="LOG_FAIXA_UOP" EntityType="CorreiosModel.LOG_FAIXA_UOP" />
+          <EntitySet Name="LOG_GRANDE_USUARIO" EntityType="CorreiosModel.LOG_GRANDE_USUARIO" />
+          <EntitySet Name="LOG_LOCALIDADE" EntityType="CorreiosModel.LOG_LOCALIDADE" />
+          <EntitySet Name="LOG_LOGRADOURO" EntityType="CorreiosModel.LOG_LOGRADOURO" />
+          <EntitySet Name="LOG_TIPO_LOGR" EntityType="CorreiosModel.LOG_TIPO_LOGR" />
+          <EntitySet Name="LOG_UNID_OPER" EntityType="CorreiosModel.LOG_UNID_OPER" />
+          <EntitySet Name="SERVICO" EntityType="CorreiosModel.SERVICO" />
+          <EntitySet Name="ATUALIZACOES_CONFIG" EntityType="CorreiosModel.ATUALIZACOES_CONFIG" />
+          <AssociationSet Name="FK_LOG_BAIRRO_LOG_LOCALIDADE" Association="CorreiosModel.FK_LOG_BAIRRO_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO" Association="CorreiosModel.FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_FAIXA_BAIRRO" EntitySet="LOG_FAIXA_BAIRRO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_GRANDE_USUARIO_LOG_BAIRRO" Association="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_GRANDE_USUARIO" EntitySet="LOG_GRANDE_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_LOGRADOURO_LOG_BAIRRO" Association="CorreiosModel.FK_LOG_LOGRADOURO_LOG_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_UNID_OPER_LOG_BAIRRO" Association="CorreiosModel.FK_LOG_UNID_OPER_LOG_BAIRRO">
+            <End Role="LOG_BAIRRO" EntitySet="LOG_BAIRRO" />
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_CPC_LOG_LOCALIDADE" Association="CorreiosModel.FK_LOG_CPC_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_CPC" EntitySet="LOG_CPC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_CPC_LOG_CPC" Association="CorreiosModel.FK_LOG_FAIXA_CPC_LOG_CPC">
+            <End Role="LOG_CPC" EntitySet="LOG_CPC" />
+            <End Role="LOG_FAIXA_CPC" EntitySet="LOG_FAIXA_CPC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE" Association="CorreiosModel.FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_FAIXA_LOCALIDADE" EntitySet="LOG_FAIXA_LOCALIDADE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_LOCALIDADE_LOG_FAIXA_UF" Association="CorreiosModel.FK_LOG_LOCALIDADE_LOG_FAIXA_UF">
+            <End Role="LOG_FAIXA_UF" EntitySet="LOG_FAIXA_UF" />
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_FAIXA_UOP_LOG_UNID_OPER" Association="CorreiosModel.FK_LOG_FAIXA_UOP_LOG_UNID_OPER">
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+            <End Role="LOG_FAIXA_UOP" EntitySet="LOG_FAIXA_UOP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE" Association="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_GRANDE_USUARIO" EntitySet="LOG_GRANDE_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO" Association="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO">
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+            <End Role="LOG_GRANDE_USUARIO" EntitySet="LOG_GRANDE_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_LOGRADOURO_LOG_LOCALIDADE" Association="CorreiosModel.FK_LOG_LOGRADOURO_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_UNID_OPER_LOG_LOCALIDADE" Association="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOCALIDADE">
+            <End Role="LOG_LOCALIDADE" EntitySet="LOG_LOCALIDADE" />
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOG_UNID_OPER_LOG_LOGRADOURO" Association="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOGRADOURO">
+            <End Role="LOG_LOGRADOURO" EntitySet="LOG_LOGRADOURO" />
+            <End Role="LOG_UNID_OPER" EntitySet="LOG_UNID_OPER" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FRETE">
+          <Key>
+            <PropertyRef Name="FRE_ID" />
+          </Key>
+          <Property Name="FRE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FRE_SERVICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FRE_NOME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FRE_REGIAO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FRE_PRAZO" Type="Int32" />
+          <Property Name="FRE_PESO" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="FRE_VALOR" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="FRE_CEPORIGEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FRE_CEPDESTINO_INI" Type="Int32" />
+          <Property Name="FRE_CEPDESTINO_FIM" Type="Int32" />
+          <Property Name="FRE_DATAHORAATUALIZACAO" Type="DateTime" Precision="3" />
+          <Property Name="FRE_CEP_DET_REF" Type="Int32" />
+          <Property Name="FRE_CEPINVALIDO" Type="Boolean" Nullable="false" />
+          <Property Name="FRE_MSGERRO" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LOG_BAIRRO">
+          <Key>
+            <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="BAI_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NO" Type="String" Nullable="false" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="BAI_NO_ABREV" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_BAIRRO_LOG_LOCALIDADE" FromRole="LOG_BAIRRO" ToRole="LOG_LOCALIDADE" />
+          <NavigationProperty Name="LOG_FAIXA_BAIRRO" Relationship="CorreiosModel.FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO" FromRole="LOG_BAIRRO" ToRole="LOG_FAIXA_BAIRRO" />
+          <NavigationProperty Name="LOG_GRANDE_USUARIO" Relationship="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_BAIRRO" FromRole="LOG_BAIRRO" ToRole="LOG_GRANDE_USUARIO" />
+          <NavigationProperty Name="LOG_LOGRADOURO" Relationship="CorreiosModel.FK_LOG_LOGRADOURO_LOG_BAIRRO" FromRole="LOG_BAIRRO" ToRole="LOG_LOGRADOURO" />
+          <NavigationProperty Name="LOG_UNID_OPER" Relationship="CorreiosModel.FK_LOG_UNID_OPER_LOG_BAIRRO" FromRole="LOG_BAIRRO" ToRole="LOG_UNID_OPER" />
+        </EntityType>
+        <EntityType Name="LOG_CONTROLE">
+          <Key>
+            <PropertyRef Name="Versao" />
+          </Key>
+          <Property Name="Versao" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+          <Property Name="Compl1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LOG_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="CPC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CPC_NO" Type="String" Nullable="false" MaxLength="96" FixedLength="false" Unicode="true" />
+          <Property Name="CPC_ENDERECO" Type="String" Nullable="false" MaxLength="108" FixedLength="false" Unicode="true" />
+          <Property Name="CPC_TIPO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CPC_ABRANGENCIA" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="CPC_KEY_DNE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_CPC_LOG_LOCALIDADE" FromRole="LOG_CPC" ToRole="LOG_LOCALIDADE" />
+          <NavigationProperty Name="LOG_FAIXA_CPC" Relationship="CorreiosModel.FK_LOG_FAIXA_CPC_LOG_CPC" FromRole="LOG_CPC" ToRole="LOG_FAIXA_CPC" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_BAIRRO">
+          <Key>
+            <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            <PropertyRef Name="FCB_NU_ORDEM" />
+          </Key>
+          <Property Name="BAI_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="FCB_NU_ORDEM" Type="Int32" Nullable="false" />
+          <Property Name="FCB_RAD_INI" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FCB_SUF_INI" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FCB_RAD_FIM" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FCB_SUF_FIM" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_BAIRRO" Relationship="CorreiosModel.FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO" FromRole="LOG_FAIXA_BAIRRO" ToRole="LOG_BAIRRO" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+            <PropertyRef Name="CPC_NU_INICIAL" />
+          </Key>
+          <Property Name="CPC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="CPC_NU_INICIAL" Type="Int32" Nullable="false" />
+          <Property Name="CPC_NU_FINAL" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LOG_CPC" Relationship="CorreiosModel.FK_LOG_FAIXA_CPC_LOG_CPC" FromRole="LOG_FAIXA_CPC" ToRole="LOG_CPC" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_LOCALIDADE">
+          <Key>
+            <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="LOC_RAD1_INI" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_SUF1_INI" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_RAD1_FIM" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_SUF1_FIM" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_RAD2_INI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_SUF2_INI" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_RAD2_FIM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_SUF2_FIM" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE" FromRole="LOG_FAIXA_LOCALIDADE" ToRole="LOG_LOCALIDADE" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_UF">
+          <Key>
+            <PropertyRef Name="UFE_SG" />
+          </Key>
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_NO" Type="String" Nullable="false" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_RAD1_INI" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_SUF1_INI" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_RAD1_FIM" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_SUF1_FIM" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_RAD2_INI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_SUF2_INI" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_RAD2_FIM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_SUF2_FIM" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_LOCALIDADE_LOG_FAIXA_UF" FromRole="LOG_FAIXA_UF" ToRole="LOG_LOCALIDADE" />
+        </EntityType>
+        <EntityType Name="LOG_FAIXA_UOP">
+          <Key>
+            <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+            <PropertyRef Name="FNC_NU_INICIAL" />
+          </Key>
+          <Property Name="UOP_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="FNC_NU_INICIAL" Type="Int32" Nullable="false" />
+          <Property Name="FNC_NU_FINAL" Type="Int32" />
+          <Property Name="FNC_IN_TIPO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_UNID_OPER" Relationship="CorreiosModel.FK_LOG_FAIXA_UOP_LOG_UNID_OPER" FromRole="LOG_FAIXA_UOP" ToRole="LOG_UNID_OPER" />
+        </EntityType>
+        <EntityType Name="LOG_GRANDE_USUARIO">
+          <Key>
+            <PropertyRef Name="GRU_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="GRU_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="LOG_NU_SEQUENCIAL" Type="Int32" />
+          <Property Name="BAI_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="GRU_NO" Type="String" Nullable="false" MaxLength="96" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="GRU_ENDERECO" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GRU_KEY_DNE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_BAIRRO" Relationship="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_BAIRRO" FromRole="LOG_GRANDE_USUARIO" ToRole="LOG_BAIRRO" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE" FromRole="LOG_GRANDE_USUARIO" ToRole="LOG_LOCALIDADE" />
+          <NavigationProperty Name="LOG_LOGRADOURO" Relationship="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO" FromRole="LOG_GRANDE_USUARIO" ToRole="LOG_LOGRADOURO" />
+        </EntityType>
+        <EntityType Name="LOG_LOCALIDADE">
+          <Key>
+            <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="LOC_NOSUB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_IN_SITUACAO" Type="Int32" Nullable="false" />
+          <Property Name="LOC_IN_TIPO_LOCALIDADE" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NU_SEQUENCIAL_SUB" Type="Int32" />
+          <Property Name="LOC_KEY_DNE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_BAIRRO" Relationship="CorreiosModel.FK_LOG_BAIRRO_LOG_LOCALIDADE" FromRole="LOG_LOCALIDADE" ToRole="LOG_BAIRRO" />
+          <NavigationProperty Name="LOG_CPC" Relationship="CorreiosModel.FK_LOG_CPC_LOG_LOCALIDADE" FromRole="LOG_LOCALIDADE" ToRole="LOG_CPC" />
+          <NavigationProperty Name="LOG_FAIXA_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE" FromRole="LOG_LOCALIDADE" ToRole="LOG_FAIXA_LOCALIDADE" />
+          <NavigationProperty Name="LOG_FAIXA_UF" Relationship="CorreiosModel.FK_LOG_LOCALIDADE_LOG_FAIXA_UF" FromRole="LOG_LOCALIDADE" ToRole="LOG_FAIXA_UF" />
+          <NavigationProperty Name="LOG_GRANDE_USUARIO" Relationship="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE" FromRole="LOG_LOCALIDADE" ToRole="LOG_GRANDE_USUARIO" />
+          <NavigationProperty Name="LOG_LOGRADOURO" Relationship="CorreiosModel.FK_LOG_LOGRADOURO_LOG_LOCALIDADE" FromRole="LOG_LOCALIDADE" ToRole="LOG_LOGRADOURO" />
+          <NavigationProperty Name="LOG_UNID_OPER" Relationship="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOCALIDADE" FromRole="LOG_LOCALIDADE" ToRole="LOG_UNID_OPER" />
+        </EntityType>
+        <EntityType Name="LOG_LOGRADOURO">
+          <Key>
+            <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="LOG_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="LOG_NO" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_NOME" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="true" />
+          <Property Name="BAI_NU_SEQUENCIAL_INI" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NU_SEQUENCIAL_FIM" Type="Int32" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_COMPLEMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_TIPO_LOGRADOURO" Type="String" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_STATUS_TIPO_LOG" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_NO_SEM_ACENTO" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="LOG_KEY_DNE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IND_UOP" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="IND_GRU" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_BAIRRO" Relationship="CorreiosModel.FK_LOG_LOGRADOURO_LOG_BAIRRO" FromRole="LOG_LOGRADOURO" ToRole="LOG_BAIRRO" />
+          <NavigationProperty Name="LOG_GRANDE_USUARIO" Relationship="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO" FromRole="LOG_LOGRADOURO" ToRole="LOG_GRANDE_USUARIO" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_LOGRADOURO_LOG_LOCALIDADE" FromRole="LOG_LOGRADOURO" ToRole="LOG_LOCALIDADE" />
+          <NavigationProperty Name="LOG_UNID_OPER" Relationship="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOGRADOURO" FromRole="LOG_LOGRADOURO" ToRole="LOG_UNID_OPER" />
+        </EntityType>
+        <EntityType Name="LOG_TIPO_LOGR">
+          <Key>
+            <PropertyRef Name="TipoLogradouro" />
+          </Key>
+          <Property Name="TipoLogradouro" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LOG_UNID_OPER">
+          <Key>
+            <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+          </Key>
+          <Property Name="UOP_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="LOC_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="LOG_NU_SEQUENCIAL" Type="Int32" />
+          <Property Name="BAI_NU_SEQUENCIAL" Type="Int32" Nullable="false" />
+          <Property Name="UOP_NO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="UOP_ENDERECO" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UOP_IN_CP" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="UOP_KEY_DNE" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOG_BAIRRO" Relationship="CorreiosModel.FK_LOG_UNID_OPER_LOG_BAIRRO" FromRole="LOG_UNID_OPER" ToRole="LOG_BAIRRO" />
+          <NavigationProperty Name="LOG_FAIXA_UOP" Relationship="CorreiosModel.FK_LOG_FAIXA_UOP_LOG_UNID_OPER" FromRole="LOG_UNID_OPER" ToRole="LOG_FAIXA_UOP" />
+          <NavigationProperty Name="LOG_LOCALIDADE" Relationship="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOCALIDADE" FromRole="LOG_UNID_OPER" ToRole="LOG_LOCALIDADE" />
+          <NavigationProperty Name="LOG_LOGRADOURO" Relationship="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOGRADOURO" FromRole="LOG_UNID_OPER" ToRole="LOG_LOGRADOURO" />
+        </EntityType>
+        <EntityType Name="SERVICO">
+          <Key>
+            <PropertyRef Name="SERV_ID" />
+          </Key>
+          <Property Name="SERV_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERV_CODIGO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_NOME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_USASENHA" Type="Int32" Nullable="false" />
+          <Property Name="SERV_COD_EMPRESA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_SENHA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ATUALIZACOES_CONFIG">
+          <Key>
+            <PropertyRef Name="SERV_ID" />
+            <PropertyRef Name="ATU_ATIVA" />
+          </Key>
+          <Property Name="ATU_WS_URL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ATU_SKIN_XML" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ATU_LIMIT_EXEC" Type="Int32" />
+          <Property Name="ATU_FREQUENCIA" Type="Int32" />
+          <Property Name="ATU_TIPOCONFIG" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_ID" Type="Int32" Nullable="false" />
+          <Property Name="ATU_ATIVA" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LOG_BAIRRO_LOG_LOCALIDADE">
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_BAIRRO" Role="LOG_BAIRRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_BAIRRO">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO">
+          <End Type="CorreiosModel.LOG_BAIRRO" Role="LOG_BAIRRO" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_FAIXA_BAIRRO" Role="LOG_FAIXA_BAIRRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_GRANDE_USUARIO_LOG_BAIRRO">
+          <End Type="CorreiosModel.LOG_BAIRRO" Role="LOG_BAIRRO" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_GRANDE_USUARIO" Role="LOG_GRANDE_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_GRANDE_USUARIO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_LOGRADOURO_LOG_BAIRRO">
+          <End Type="CorreiosModel.LOG_BAIRRO" Role="LOG_BAIRRO" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_LOGRADOURO" Role="LOG_LOGRADOURO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_LOGRADOURO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL_INI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_UNID_OPER_LOG_BAIRRO">
+          <End Type="CorreiosModel.LOG_BAIRRO" Role="LOG_BAIRRO" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_UNID_OPER" Role="LOG_UNID_OPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_BAIRRO">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_UNID_OPER">
+              <PropertyRef Name="BAI_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_CPC_LOG_LOCALIDADE">
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_CPC" Role="LOG_CPC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_CPC">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_CPC_LOG_CPC">
+          <End Type="CorreiosModel.LOG_CPC" Role="LOG_CPC" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_FAIXA_CPC" Role="LOG_FAIXA_CPC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_CPC">
+              <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_CPC">
+              <PropertyRef Name="CPC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE">
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_FAIXA_LOCALIDADE" Role="LOG_FAIXA_LOCALIDADE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_LOCALIDADE_LOG_FAIXA_UF">
+          <End Type="CorreiosModel.LOG_FAIXA_UF" Role="LOG_FAIXA_UF" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_FAIXA_UF">
+              <PropertyRef Name="UFE_SG" />
+            </Principal>
+            <Dependent Role="LOG_LOCALIDADE">
+              <PropertyRef Name="UFE_SG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_FAIXA_UOP_LOG_UNID_OPER">
+          <End Type="CorreiosModel.LOG_UNID_OPER" Role="LOG_UNID_OPER" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_FAIXA_UOP" Role="LOG_FAIXA_UOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_UNID_OPER">
+              <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_FAIXA_UOP">
+              <PropertyRef Name="UOP_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE">
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_GRANDE_USUARIO" Role="LOG_GRANDE_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_GRANDE_USUARIO">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO">
+          <End Type="CorreiosModel.LOG_LOGRADOURO" Role="LOG_LOGRADOURO" Multiplicity="0..1" />
+          <End Type="CorreiosModel.LOG_GRANDE_USUARIO" Role="LOG_GRANDE_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOGRADOURO">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_GRANDE_USUARIO">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_LOGRADOURO_LOG_LOCALIDADE">
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_LOGRADOURO" Role="LOG_LOGRADOURO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_LOGRADOURO">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_UNID_OPER_LOG_LOCALIDADE">
+          <End Type="CorreiosModel.LOG_LOCALIDADE" Role="LOG_LOCALIDADE" Multiplicity="1" />
+          <End Type="CorreiosModel.LOG_UNID_OPER" Role="LOG_UNID_OPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOCALIDADE">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_UNID_OPER">
+              <PropertyRef Name="LOC_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOG_UNID_OPER_LOG_LOGRADOURO">
+          <End Type="CorreiosModel.LOG_LOGRADOURO" Role="LOG_LOGRADOURO" Multiplicity="0..1" />
+          <End Type="CorreiosModel.LOG_UNID_OPER" Role="LOG_UNID_OPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOG_LOGRADOURO">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Principal>
+            <Dependent Role="LOG_UNID_OPER">
+              <PropertyRef Name="LOG_NU_SEQUENCIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CorreiosModelStoreContainer" CdmEntityContainer="CorreiosEntities">
+          <EntitySetMapping Name="FRETE">
+            <EntityTypeMapping TypeName="CorreiosModel.FRETE">
+              <MappingFragment StoreEntitySet="FRETE">
+                <ScalarProperty Name="FRE_MSGERRO" ColumnName="FRE_MSGERRO" />
+                <ScalarProperty Name="FRE_CEPINVALIDO" ColumnName="FRE_CEPINVALIDO" />
+                <ScalarProperty Name="FRE_CEP_DET_REF" ColumnName="FRE_CEP_DET_REF" />
+                <ScalarProperty Name="FRE_DATAHORAATUALIZACAO" ColumnName="FRE_DATAHORAATUALIZACAO" />
+                <ScalarProperty Name="FRE_CEPDESTINO_FIM" ColumnName="FRE_CEPDESTINO_FIM" />
+                <ScalarProperty Name="FRE_CEPDESTINO_INI" ColumnName="FRE_CEPDESTINO_INI" />
+                <ScalarProperty Name="FRE_CEPORIGEM" ColumnName="FRE_CEPORIGEM" />
+                <ScalarProperty Name="FRE_VALOR" ColumnName="FRE_VALOR" />
+                <ScalarProperty Name="FRE_PESO" ColumnName="FRE_PESO" />
+                <ScalarProperty Name="FRE_PRAZO" ColumnName="FRE_PRAZO" />
+                <ScalarProperty Name="FRE_REGIAO" ColumnName="FRE_REGIAO" />
+                <ScalarProperty Name="FRE_NOME" ColumnName="FRE_NOME" />
+                <ScalarProperty Name="FRE_SERVICO" ColumnName="FRE_SERVICO" />
+                <ScalarProperty Name="FRE_ID" ColumnName="FRE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_BAIRRO">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_BAIRRO">
+              <MappingFragment StoreEntitySet="LOG_BAIRRO">
+                <ScalarProperty Name="BAI_NO_ABREV" ColumnName="BAI_NO_ABREV" />
+                <ScalarProperty Name="BAI_NO" ColumnName="BAI_NO" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="BAI_NU_SEQUENCIAL" ColumnName="BAI_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_CONTROLE">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_CONTROLE">
+              <MappingFragment StoreEntitySet="LOG_CONTROLE">
+                <ScalarProperty Name="Compl1" ColumnName="Compl1" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Versao" ColumnName="Versao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_CPC">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_CPC">
+              <MappingFragment StoreEntitySet="LOG_CPC">
+                <ScalarProperty Name="CPC_KEY_DNE" ColumnName="CPC_KEY_DNE" />
+                <ScalarProperty Name="CPC_ABRANGENCIA" ColumnName="CPC_ABRANGENCIA" />
+                <ScalarProperty Name="CPC_TIPO" ColumnName="CPC_TIPO" />
+                <ScalarProperty Name="CPC_ENDERECO" ColumnName="CPC_ENDERECO" />
+                <ScalarProperty Name="CPC_NO" ColumnName="CPC_NO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="CPC_NU_SEQUENCIAL" ColumnName="CPC_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_FAIXA_BAIRRO">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_FAIXA_BAIRRO">
+              <MappingFragment StoreEntitySet="LOG_FAIXA_BAIRRO">
+                <ScalarProperty Name="FCB_SUF_FIM" ColumnName="FCB_SUF_FIM" />
+                <ScalarProperty Name="FCB_RAD_FIM" ColumnName="FCB_RAD_FIM" />
+                <ScalarProperty Name="FCB_SUF_INI" ColumnName="FCB_SUF_INI" />
+                <ScalarProperty Name="FCB_RAD_INI" ColumnName="FCB_RAD_INI" />
+                <ScalarProperty Name="FCB_NU_ORDEM" ColumnName="FCB_NU_ORDEM" />
+                <ScalarProperty Name="BAI_NU_SEQUENCIAL" ColumnName="BAI_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_FAIXA_CPC">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_FAIXA_CPC">
+              <MappingFragment StoreEntitySet="LOG_FAIXA_CPC">
+                <ScalarProperty Name="CPC_NU_FINAL" ColumnName="CPC_NU_FINAL" />
+                <ScalarProperty Name="CPC_NU_INICIAL" ColumnName="CPC_NU_INICIAL" />
+                <ScalarProperty Name="CPC_NU_SEQUENCIAL" ColumnName="CPC_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_FAIXA_LOCALIDADE">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_FAIXA_LOCALIDADE">
+              <MappingFragment StoreEntitySet="LOG_FAIXA_LOCALIDADE">
+                <ScalarProperty Name="LOC_SUF2_FIM" ColumnName="LOC_SUF2_FIM" />
+                <ScalarProperty Name="LOC_RAD2_FIM" ColumnName="LOC_RAD2_FIM" />
+                <ScalarProperty Name="LOC_SUF2_INI" ColumnName="LOC_SUF2_INI" />
+                <ScalarProperty Name="LOC_RAD2_INI" ColumnName="LOC_RAD2_INI" />
+                <ScalarProperty Name="LOC_SUF1_FIM" ColumnName="LOC_SUF1_FIM" />
+                <ScalarProperty Name="LOC_RAD1_FIM" ColumnName="LOC_RAD1_FIM" />
+                <ScalarProperty Name="LOC_SUF1_INI" ColumnName="LOC_SUF1_INI" />
+                <ScalarProperty Name="LOC_RAD1_INI" ColumnName="LOC_RAD1_INI" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_FAIXA_UF">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_FAIXA_UF">
+              <MappingFragment StoreEntitySet="LOG_FAIXA_UF">
+                <ScalarProperty Name="UFE_SUF2_FIM" ColumnName="UFE_SUF2_FIM" />
+                <ScalarProperty Name="UFE_RAD2_FIM" ColumnName="UFE_RAD2_FIM" />
+                <ScalarProperty Name="UFE_SUF2_INI" ColumnName="UFE_SUF2_INI" />
+                <ScalarProperty Name="UFE_RAD2_INI" ColumnName="UFE_RAD2_INI" />
+                <ScalarProperty Name="UFE_SUF1_FIM" ColumnName="UFE_SUF1_FIM" />
+                <ScalarProperty Name="UFE_RAD1_FIM" ColumnName="UFE_RAD1_FIM" />
+                <ScalarProperty Name="UFE_SUF1_INI" ColumnName="UFE_SUF1_INI" />
+                <ScalarProperty Name="UFE_RAD1_INI" ColumnName="UFE_RAD1_INI" />
+                <ScalarProperty Name="UFE_NO" ColumnName="UFE_NO" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_FAIXA_UOP">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_FAIXA_UOP">
+              <MappingFragment StoreEntitySet="LOG_FAIXA_UOP">
+                <ScalarProperty Name="FNC_IN_TIPO" ColumnName="FNC_IN_TIPO" />
+                <ScalarProperty Name="FNC_NU_FINAL" ColumnName="FNC_NU_FINAL" />
+                <ScalarProperty Name="FNC_NU_INICIAL" ColumnName="FNC_NU_INICIAL" />
+                <ScalarProperty Name="UOP_NU_SEQUENCIAL" ColumnName="UOP_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_GRANDE_USUARIO">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_GRANDE_USUARIO">
+              <MappingFragment StoreEntitySet="LOG_GRANDE_USUARIO">
+                <ScalarProperty Name="GRU_KEY_DNE" ColumnName="GRU_KEY_DNE" />
+                <ScalarProperty Name="GRU_ENDERECO" ColumnName="GRU_ENDERECO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="GRU_NO" ColumnName="GRU_NO" />
+                <ScalarProperty Name="BAI_NU_SEQUENCIAL" ColumnName="BAI_NU_SEQUENCIAL" />
+                <ScalarProperty Name="LOG_NU_SEQUENCIAL" ColumnName="LOG_NU_SEQUENCIAL" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="GRU_NU_SEQUENCIAL" ColumnName="GRU_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_LOCALIDADE">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_LOCALIDADE">
+              <MappingFragment StoreEntitySet="LOG_LOCALIDADE">
+                <ScalarProperty Name="LOC_KEY_DNE" ColumnName="LOC_KEY_DNE" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL_SUB" ColumnName="LOC_NU_SEQUENCIAL_SUB" />
+                <ScalarProperty Name="LOC_IN_TIPO_LOCALIDADE" ColumnName="LOC_IN_TIPO_LOCALIDADE" />
+                <ScalarProperty Name="LOC_IN_SITUACAO" ColumnName="LOC_IN_SITUACAO" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="LOC_NO" ColumnName="LOC_NO" />
+                <ScalarProperty Name="LOC_NOSUB" ColumnName="LOC_NOSUB" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_LOGRADOURO">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_LOGRADOURO">
+              <MappingFragment StoreEntitySet="LOG_LOGRADOURO">
+                <ScalarProperty Name="IND_GRU" ColumnName="IND_GRU" />
+                <ScalarProperty Name="IND_UOP" ColumnName="IND_UOP" />
+                <ScalarProperty Name="LOG_KEY_DNE" ColumnName="LOG_KEY_DNE" />
+                <ScalarProperty Name="LOG_NO_SEM_ACENTO" ColumnName="LOG_NO_SEM_ACENTO" />
+                <ScalarProperty Name="LOG_STATUS_TIPO_LOG" ColumnName="LOG_STATUS_TIPO_LOG" />
+                <ScalarProperty Name="LOG_TIPO_LOGRADOURO" ColumnName="LOG_TIPO_LOGRADOURO" />
+                <ScalarProperty Name="LOG_COMPLEMENTO" ColumnName="LOG_COMPLEMENTO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="BAI_NU_SEQUENCIAL_FIM" ColumnName="BAI_NU_SEQUENCIAL_FIM" />
+                <ScalarProperty Name="BAI_NU_SEQUENCIAL_INI" ColumnName="BAI_NU_SEQUENCIAL_INI" />
+                <ScalarProperty Name="LOG_NOME" ColumnName="LOG_NOME" />
+                <ScalarProperty Name="LOG_NO" ColumnName="LOG_NO" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOG_NU_SEQUENCIAL" ColumnName="LOG_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_TIPO_LOGR">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_TIPO_LOGR">
+              <MappingFragment StoreEntitySet="LOG_TIPO_LOGR">
+                <ScalarProperty Name="TipoLogradouro" ColumnName="TipoLogradouro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_UNID_OPER">
+            <EntityTypeMapping TypeName="CorreiosModel.LOG_UNID_OPER">
+              <MappingFragment StoreEntitySet="LOG_UNID_OPER">
+                <ScalarProperty Name="UOP_KEY_DNE" ColumnName="UOP_KEY_DNE" />
+                <ScalarProperty Name="UOP_IN_CP" ColumnName="UOP_IN_CP" />
+                <ScalarProperty Name="UOP_ENDERECO" ColumnName="UOP_ENDERECO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="UOP_NO" ColumnName="UOP_NO" />
+                <ScalarProperty Name="BAI_NU_SEQUENCIAL" ColumnName="BAI_NU_SEQUENCIAL" />
+                <ScalarProperty Name="LOG_NU_SEQUENCIAL" ColumnName="LOG_NU_SEQUENCIAL" />
+                <ScalarProperty Name="LOC_NU_SEQUENCIAL" ColumnName="LOC_NU_SEQUENCIAL" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="UOP_NU_SEQUENCIAL" ColumnName="UOP_NU_SEQUENCIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICO">
+            <EntityTypeMapping TypeName="CorreiosModel.SERVICO">
+              <MappingFragment StoreEntitySet="SERVICO">
+                <ScalarProperty Name="SERV_SENHA" ColumnName="SERV_SENHA" />
+                <ScalarProperty Name="SERV_COD_EMPRESA" ColumnName="SERV_COD_EMPRESA" />
+                <ScalarProperty Name="SERV_USASENHA" ColumnName="SERV_USASENHA" />
+                <ScalarProperty Name="SERV_NOME" ColumnName="SERV_NOME" />
+                <ScalarProperty Name="SERV_CODIGO" ColumnName="SERV_CODIGO" />
+                <ScalarProperty Name="SERV_ID" ColumnName="SERV_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ATUALIZACOES_CONFIG">
+            <EntityTypeMapping TypeName="CorreiosModel.ATUALIZACOES_CONFIG">
+              <MappingFragment StoreEntitySet="ATUALIZACOES_CONFIG">
+                <ScalarProperty Name="ATU_ATIVA" ColumnName="ATU_ATIVA" />
+                <ScalarProperty Name="SERV_ID" ColumnName="SERV_ID" />
+                <ScalarProperty Name="ATU_TIPOCONFIG" ColumnName="ATU_TIPOCONFIG" />
+                <ScalarProperty Name="ATU_FREQUENCIA" ColumnName="ATU_FREQUENCIA" />
+                <ScalarProperty Name="ATU_LIMIT_EXEC" ColumnName="ATU_LIMIT_EXEC" />
+                <ScalarProperty Name="ATU_SKIN_XML" ColumnName="ATU_SKIN_XML" />
+                <ScalarProperty Name="ATU_WS_URL" ColumnName="ATU_WS_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

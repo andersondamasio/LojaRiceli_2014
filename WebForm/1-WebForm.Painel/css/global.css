@@ -1,0 +1,141 @@
+﻿     /*produtos*/
+        .productItem
+        {
+            width: 340px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+        }
+        .groupSeparator
+        {
+            border-top: 1px dotted Gray;
+            height: 1px;
+            clear: both;
+            
+        }
+        .itemSeparator
+        {
+            height: 180px;
+            width: 1px;
+            border-left: 1px dotted Gray;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            float: left;
+        }
+        
+        
+
+.modalBackground
+{
+  background-color:#CCCCFF;
+  filter:alpha(opacity=40);
+  opacity:0.5;
+}
+.modalPopup
+{
+        border-width:0px;
+        border-style:solid;
+        padding:3px;
+        width:250px;
+}
+input[type="button"], input[type="submit"] {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background-color:#79bbff;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	font-style:normal;
+	line-height:22px;
+	text-decoration:none;
+	text-align:center;
+}.botoes:hover {
+	background-color:#378de5;
+}.botoes:active {
+	position:relative;
+	top:1px;
+}
+
+button[disabled]:active, button[disabled],
+input[type="reset"][disabled]:active,
+input[type="reset"][disabled],
+input[type="button"][disabled]:active,
+input[type="button"][disabled],
+select[disabled] > input[type="button"],
+select[disabled] > input[type="button"]:active,
+input[type="submit"][disabled]:active,
+input[type="submit"][disabled] {
+ -moz-box-shadow:inset 0px 1px 0px 0px #ededed;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ededed;
+	box-shadow:inset 0px 1px 0px 0px #ededed;
+	background-color:#ededed;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #ededed;
+	display:inline-block;
+	color:;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	font-style:normal;
+	height:22px;
+	line-height:22px;
+	width:90px;
+	text-decoration:none;
+	text-align:center;
+}.botoes:hover {
+	background-color:#ededed;
+}.botoes:active {
+	position:relative;
+	top:1px;
+}
+
+ /*Repeater em 2 colunas */
+ .twoColumns{
+            width: 300px; /*this is the width of your <TR>*/
+        }
+        .twoColumns li{
+            float: left;
+            width: 135px; /*adjust these number so that two images fix into one row */
+            padding-left: 10px; /*adjust this to have a space between two images */
+            margin-bottom: 3px; /*adjst this to have a space in between top and bottom images */
+            display: block;
+            list-style: none;
+            font-family: verdana;
+            font-size: 12px;
+        }
+
+
+
+
+        #leftcolumn { width: 300px; border: 1px solid red; float: left}
+#rightcolumn { width: 300px; border: 1px solid red; float: right}

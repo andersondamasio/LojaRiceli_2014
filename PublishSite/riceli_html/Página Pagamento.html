@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Página Pagamento</title>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="header">
+  <div id="Topo">Site 100% Seguro <a href="#">Continuar comprando</a>
+  <div style="margin:auto; height:40px; width:620px; margin-top:50px;">
+  	<span class="BC_marcado">Carrinho</span>
+    <span class="BC_marcado">Identificação</span>
+    <span class="BC_marcado">Pagamento</span>
+    <span class="BC_desmarcado">Confirmação</span>
+    <div class="BC_seta" style="margin-left:415px;">75% <img src="_images/seta.png" ></div>
+  </div>
+  </div>
+  <div id="Pagamento">
+  <div id="corpo">
+  <div class="PagCol1">
+ <div class="clear"><span class="numeral">01</span> <span class="TituloItem">Informações do Cliente</span>
+    </div> 
+ <div class="clear">
+   <p><br>
+     <label>
+       <input type="radio" name="Personalidade" value="PF" id="Personalidade_0">
+       Pessoa Fisica</label>
+  <br><br>
+     <label>
+       <input type="radio" name="Personalidade" value="PJ" id="Personalidade_1">
+       Pessoa Jurídica</label>
+     
+     
+     <label for="textfield" class="Rotulo">Email</label>
+     <input type="text" name="textfield" id="textfield" class="CaixaTexto">
+     
+     <label for="textfield2" class="Rotulo">Senha</label>
+     <input type="text" name="textfield2" id="textfield2" class="CaixaTexto">
+     
+     <label for="textfield3" class="Rotulo">Confirmar Senha</label>
+     <input type="text" name="textfield3" id="textfield3" class="CaixaTexto">
+     <label for="textfield4" class="Rotulo">CPF</label>
+     <input type="text" name="textfield4" id="textfield4" class="CaixaTexto">
+     <label for="textfield5" class="Rotulo">Nome</label>
+     <input type="text" name="textfield5" id="textfield5" class="CaixaTexto">
+     <label for="textfield5" class="Rotulo">Sobrenome</label>
+     <input type="text" name="textfield5" id="text1" class="CaixaTexto">
+   </p>
+   <span class="Rotulo">Data de Nascimento<br>
+   </span>
+   <p>
+     <select name="select" size="1" class="form_list" id="select">
+       <option>01</option>
+       <option>02</option>
+     </select>
+     <select name="select2" size="1" class="form_list" id="select2">
+       <option>Janeiro</option>
+       <option>Fevereiro</option>
+     </select>
+     <select name="select3" size="1" class="form_list" id="select3">
+       <option>1998</option>
+       <option>1997</option>
+       <option>1996</option>
+       <option>1995</option>
+       <option>1994</option>
+     </select>
+   </p>
+   <div style="margin-bottom:5px;margin-top:15px;"><span class="numeral">02</span> <span class="TituloItem">Endereço de Cobrança e Entrega</span> </div>
+   <p>
+   
+      <label for="cep" class="Rotulo">CEP</label>
+     <input type="text" name="cep" id="cep" class="CaixaTexto" style="width:120px;"> 
+     &nbsp;
+     <a href="#">Esqueceu seu CEP?</a></p>
+     <div style="float:left; width:150px;">
+<label for="End" class="Rotulo">Endereço</label>
+     <input type="text" name="End" id="End" class="CaixaTexto" style="width:150px;">
+     </div><div style="float:right; width:100px;">
+     <label for="Num" class="Rotulo">Número</label>
+     <input type="text" name="Num" id="Num" class="CaixaTexto" style="width:100px;"> 
+     </div>
+     <div style="padding:10px;">&nbsp;</div>
+      <label for="ccOMP" class="Rotulo">Complemento</label>
+     <input type="text" name="ccOMP" id="ccOMP" class="CaixaTexto" > 
+     <label for="Bairro" class="Rotulo">Bairro</label>
+     <input type="text" name="Bairro" id="Bairro" class="CaixaTexto" > 
+     <div style="float:left; width:150px;">
+<label for="Cidade" class="Rotulo">Cidade</label>
+     <input type="text" name="Cidade" id="Cidade" class="CaixaTexto" style="width:150px;">
+     </div><div style="float:right; width:100px;">
+     <label for="Num" class="Rotulo">Estado</label>
+     <select name="select4" class="form_list" id="select4">
+       <option value="PR">Paraná</option>
+       <option value="SP">São Paulo</option>
+     </select> 
+     </div>
+     <div class="clear" style="height:0;"></div>
+   <label for="Ref" class="Rotulo">Referência</label>
+     <input type="text" name="Ref" id="Ref" class="CaixaTexto" > 
+      <div style="float:left; width:50px;">
+<label for="DDD" class="Rotulo">DDD</label>
+     <input type="text" name="DDD" id="DDD" class="CaixaTexto" style="width:50px;">
+     </div><div style="float:Right; width:200px;">
+   <label for="DDD" class="Rotulo">Telefone Residencial</label>
+     <input type="text" name="DDD" id="Text2" class="CaixaTexto" style="width:200px;">
+     </div>
+        <div style="float:left; width:50px;">
+<label for="DDD" class="Rotulo">DDD</label>
+     <input type="text" name="DDD" id="Text3" class="CaixaTexto" style="width:50px;">
+     </div><div style="float:Right; width:200px;">
+   <label for="DDD" class="Rotulo">Telefone Comercial</label>
+     <input type="text" name="DDD" id="Text4" class="CaixaTexto" style="width:200px;">
+     </div>
+        <div style="float:left; width:50px;">
+<label for="DDD" class="Rotulo">DDD</label>
+     <input type="text" name="DDD" id="Text5" class="CaixaTexto" style="width:50px;">
+     </div><div style="float:Right; width:200px;">
+   <label for="DDD" class="Rotulo">Telefone Celular</label>
+     <input type="text" name="DDD" id="Text6" class="CaixaTexto" style="width:200px;">
+     </div>
+     <div class="clear"></div>
+     <input name="aceite" type="checkbox" value="aceite" checked> Aceito receber ofertas e descontos exclusivos por email.
+     <hr />
+     <span class="TituloItem">Endereço de Entrega</span><br>
+ 
+      <input name="aceite" type="checkbox" value="aceite" checked> Endereço de entrega igual ao endereço de cobrança.
+  </div>
+  </div>
+   <div class="PagCol2">
+      <div class="clear"><span class="numeral">03</span> <span class="TituloItem">Opções de Entrega</span>
+      <div style="clear:both; height:250px;"><!-- Listagem -->
+      <ul>
+          <li>Método</li>
+          <li>Preço</li>
+          <li>Prazo</li>
+      </ul>
+       <ul class="Lista">
+          <li>
+            <input type="radio" name="radio" id="Entrega" value="Entrega">
+            <label for="Entrega">PAC</label>
+          </li>
+          <li>R$ 0,00</li>
+          <li>4 a 5 dias</li>
+      </ul>
+        <ul class="Lista">
+          <li>
+            <input type="radio" name="radio" id="Radio1" value="Entrega">
+            <label for="Entrega">Sedex</label>
+          </li>
+          <li>R$ 0,00</li>
+          <li>2 a 3 dias</li>
+      </ul>
+      </div>
+    </div>
+    <div class="clear" style="padding-top:100px;"><span class="numeral">04</span> <span class="TituloItem">Formas de Pagamento</span>
+    <div class="clear"></div>
+      <input type="radio" name="radio" id="Pagamento2" value="Pagamento">
+      <label for="Pagamento2">PagSeguro</label><br><br>
+
+
+      <img src="_images/pag_seguro.png"> <br><br>
+
+
+      <input type="radio" name="radio" id="Pagamento3" value="Pagamento">
+      <label for="Pagamento3">Boleto Bancário</label><br>
+<br>
+
+       <input type="radio" name="radio" id="Pagamento4" value="Pagamento">
+      <label for="Pagamento4">Cartão de Crédito</label>
+      <br>
+      <br><p><img src="_images/cartoes.png" width="94" height="18"></p>
+      * a bandeira de seu cartão será selecionada automaticamente.
+       <span class="Rotulo">Número de parcelas<br><br>
+
+   </span>
+
+     <select name="select5" size="1" class="form_list" id="select5">
+       <option>01 x R$299,90</option>
+       <option>02x R$150,00</option>
+     </select>
+     <label for="textfield5" class="Rotulo">Nº do Cartão</label>
+     <input type="text" name="textfield5" id="text7" class="CaixaTexto">
+      <label for="textfield5" class="Rotulo">Nome do Cartão</label>
+     <input type="text" name="textfield5" id="text8" class="CaixaTexto">
+     
+      <label for="cep" class="Rotulo">Vencimento</label>
+     <input type="text" name="cep" id="Text9" class="CaixaTexto" style="width:120px;"> 
+      <label for="cep" class="Rotulo">Código de Seguraça</label>
+     <input type="text" name="cep" id="Text10" class="CaixaTexto" style="width:120px;"> 
+    </div>
+    
+   </div>
+   <div class="PagCol3">
+   <div class="clear"><span class="numeral">05</span> <span class="TituloItem">Revisão do Pedido</span>
+    </div>
+      <div class="btn_finalizar"> <a href="#">Finalizar Compra</a></div>
+      <div class="clear"></div>
+       <ul>
+          <li style="width:140px">Produto</li>
+          <li>Qtde</li>
+          <li>Preço</li>
+      </ul>
+      <ul class="Lista">
+      <li style="width:155px !important"><img src="_images/_produtos/produto-modelo.jpg" style="float:left; width:30px;">Sapatenis Cavaleira Cor Vinho</li>
+      <li>01</li>
+      <li> R$259,90</li>
+      </ul>
+      <hr />
+       <label for="textfield5" class="Rotulo">Cupom de Desconto</label>
+     <input type="text" name="textfield5" id="text11" class="CaixaTexto" style="width:190px;"><input type="button" value="Aplicar" class="btn_apply">
+     <div class="clear" style="border: 1px solid #999; height:150px;">
+     <div style="float:left; width:150px;padding:5px;">
+     Subtotal
+     </div>
+      <div style="float:right; width:100px; text-align:right;padding:5px;">
+      R$259,90
+      </div>
+     <hr />
+      <div style="float:left; width:150px;padding:5px;">
+     Frete
+     </div>
+     <div style="float:right; width:100px; text-align:right;padding:5px;">
+      R$19,90
+      </div>
+     <hr />
+      <div style="float:left; width:150px;padding:5px;">
+    <span class="preco"> Total</span>
+     </div>
+     <div style="float:right; width:100px; text-align:right;padding:5px;">
+    <span class="preco"> R$309,90</span>
+     </div>
+     <hr />
+      <div style="float:right; width:100px; text-align:right;padding:5px;">
+     12x R$7,55
+     </div>
+       <div class="btn_finalizar"> <a href="#">Finalizar Compra</a></div>
+     </div>
+  </div>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+  
+</div>
+<div id="barraRodape">
+  <ul>
+    <li>Dúvidas Frequentes</li>
+    <li>Política de Trocas e Devoluções</li>
+    <li>Prazo de Entrega</li>
+    <li>Como Comprar</li>
+    <li>Mapa do Site</li>
+    <li>Política de Privacidade</li>
+    <li>Política de Frete</li>
+    <li>Sobre</li>
+  </ul>
+
+</div>
+<div style="width:1003px; margin:auto;">
+    <div id="col1">
+    <h1>Formas de Pagamento</h1>
+    <p><img src="_images/cart_visa.png" width="50" height="30"><img src="_images/cart_master.png" width="50" height="30"><img src="_images/cart_amex.png" width="50" height="30"><img src="_images/boleto.png" width="50" height="30"></p>
+    </div>
+    <div id="col2">
+    <a href="https://developers.facebook.com/docs/plugins/follow-button">Followers</a></div>
+    <div id="col3">
+        <h1>+ Riceli</h1>
+        <p><img src="_images/sprint_social_network.png" width="271" height="29"></p>
+    </div>
+</div>
+<div id="copyright">B2W - Companhia Digital / CNPJ: 00.776.574/0006-60 / Endereço: Rua Sacadura Cabral, 102 - Rio de Janeiro, RJ - 20081-902 </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00ffc870fb1b4f138fd456976f347c39" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="LojaModel.BoletimInfo" Width="1.5" PointX="5.25" PointY="68.5" />
+        <EntityTypeShape EntityType="LojaModel.Carrinho" Width="1.5" PointX="5.25" PointY="80.375" />
+        <EntityTypeShape EntityType="LojaModel.Cliente" Width="1.5" PointX="3" PointY="77.375" />
+        <EntityTypeShape EntityType="LojaModel.ClienteEnderecoAdicional" Width="1.5" PointX="5.25" PointY="95.125" />
+        <EntityTypeShape EntityType="LojaModel.Configuracao" Width="1.5" PointX="3" PointY="48.625" />
+        <EntityTypeShape EntityType="LojaModel.ConfiguracaoBoleto" Width="1.5" PointX="3" PointY="71.25" />
+        <EntityTypeShape EntityType="LojaModel.Cupom" Width="1.5" PointX="5.25" PointY="87.625" />
+        <EntityTypeShape EntityType="LojaModel.Entrega" Width="1.5" PointX="3" PointY="87.625" />
+        <EntityTypeShape EntityType="LojaModel.FormaPagamento" Width="1.5" PointX="3" PointY="64.125" />
+        <EntityTypeShape EntityType="LojaModel.GatPagSeguro" Width="1.5" PointX="3" PointY="53.75" />
+        <EntityTypeShape EntityType="LojaModel.Grupo" Width="1.5" PointX="3" PointY="32.5" />
+        <EntityTypeShape EntityType="LojaModel.LojaCon" Width="1.5" PointX="0.75" PointY="53.25" />
+        <EntityTypeShape EntityType="LojaModel.Marca" Width="1.5" PointX="3" PointY="60.25" />
+        <EntityTypeShape EntityType="LojaModel.MensagemSistema" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LojaModel.Parcelamento" Width="1.5" PointX="3" PointY="40.625" />
+        <EntityTypeShape EntityType="LojaModel.Parcelamento_FormaPagamento" Width="1.5" PointX="5.25" PointY="52.75" />
+        <EntityTypeShape EntityType="LojaModel.ParcelamentoParcela" Width="1.5" PointX="5.25" PointY="41.375" />
+        <EntityTypeShape EntityType="LojaModel.Pedido" Width="1.5" PointX="10.5" PointY="54" />
+        <EntityTypeShape EntityType="LojaModel.PedidoFeed" Width="1.5" PointX="12.75" PointY="65.125" />
+        <EntityTypeShape EntityType="LojaModel.PedidoProduto" Width="1.5" PointX="12.75" PointY="57.875" />
+        <EntityTypeShape EntityType="LojaModel.PedidoStatus" Width="1.5" PointX="12.75" PointY="48.5" />
+        <EntityTypeShape EntityType="LojaModel.Produto" Width="1.5" PointX="5.25" PointY="56" />
+        <EntityTypeShape EntityType="LojaModel.Produto_Grupo" Width="1.5" PointX="5.25" PointY="33.375" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoInfo" Width="1.5" PointX="7.5" PointY="49.875" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoInfoItem" Width="1.5" PointX="9.75" PointY="49.75" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoSku" Width="1.5" PointX="7.5" PointY="57.75" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoSkuAviso" Width="1.5" PointX="8.25" PointY="80.5" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoSkuCor" Width="1.5" PointX="3" PointY="56.875" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoSkuFoto" Width="1.5" PointX="9.75" PointY="45.125" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoSkuTamanho" Width="1.5" PointX="3" PointY="37.25" />
+        <EntityTypeShape EntityType="LojaModel.SocialConexao" Width="1.5" PointX="10.5" PointY="72.5" />
+        <EntityTypeShape EntityType="LojaModel.SocialConfig" Width="1.5" PointX="3" PointY="45.25" />
+        <EntityTypeShape EntityType="LojaModel.SocialPerfil" Width="1.5" PointX="8.25" PointY="66.375" />
+        <EntityTypeShape EntityType="LojaModel.Status" Width="1.5" PointX="3" PointY="28.375" />
+        <EntityTypeShape EntityType="LojaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LojaModel.Usuario" Width="1.5" PointX="3" PointY="23.875" />
+        <AssociationConnector Association="LojaModel.FK_BoletimInfo_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_BoletimInfo_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Carrinho_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_Carrinho_ProdutoSku" />
+        <AssociationConnector Association="LojaModel.FK_Cliente_Loja" />
+        <AssociationConnector Association="LojaModel.FK_ClienteEnderecoAdicional_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_Cupom_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_Pedido_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSkuAviso_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_SocialPerfil_Cliente" />
+        <AssociationConnector Association="LojaModel.FK_Configuracao_Loja" />
+        <AssociationConnector Association="LojaModel.FK_ConfiguracaoBoleto_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Pedido_Cupom" />
+        <AssociationConnector Association="LojaModel.FK_Entrega_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSku_Entrega" />
+        <AssociationConnector Association="LojaModel.FK_FormaPagamento_Loja" />
+        <AssociationConnector Association="LojaModel.FK_Parcelamento_FormaPagamento_FormaPagamento" />
+        <AssociationConnector Association="LojaModel.FK_GatPagSeguro_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Grupo_Grupo" />
+        <AssociationConnector Association="LojaModel.FK_Grupo_Loja" />
+        <AssociationConnector Association="LojaModel.FK_Produto_Grupo_Grupo" />
+        <AssociationConnector Association="LojaModel.FK_ClienteSocial_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Marca_Loja" />
+        <AssociationConnector Association="LojaModel.FK_Parcelamento_Loja" />
+        <AssociationConnector Association="LojaModel.FK_Produto_Loja" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSkuCor_Loja" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSkuTamanho_Loja" />
+        <AssociationConnector Association="LojaModel.FK_RedeSocial_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Status_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Usuario_LojaCon" />
+        <AssociationConnector Association="LojaModel.FK_Produto_Marca" />
+        <AssociationConnector Association="LojaModel.FK_Parcelamento_FormaPagamento_Parcelamento" />
+        <AssociationConnector Association="LojaModel.FK_ParcelamentoParcela_Parcelamento" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSku_Parcelamento" />
+        <AssociationConnector Association="LojaModel.FK_Pedido_Status" />
+        <AssociationConnector Association="LojaModel.FK_PedidoFeed_Pedido" />
+        <AssociationConnector Association="LojaModel.FK_PedidoProduto_Pedido" />
+        <AssociationConnector Association="LojaModel.FK_PedidoStatus_Pedido" />
+        <AssociationConnector Association="LojaModel.FK_PedidoProduto_ProdutoSku" />
+        <AssociationConnector Association="LojaModel.FK_PedidoStatus_Status" />
+        <AssociationConnector Association="LojaModel.FK_Produto_Grupo_Produto" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoInfo_Produto" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSku_Produto" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoInfoItem_ProdutoInfo" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSku_ProdutoSkuCor" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSku_ProdutoSkuTamanho" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSkuAviso_ProdutoSku" />
+        <AssociationConnector Association="LojaModel.FK_ProdutoSkuFoto_ProdutoSku" />
+        <AssociationConnector Association="LojaModel.FK_SocialConexao_SocialPerfil_conectado" />
+        <AssociationConnector Association="LojaModel.FK_SocialConexao_SocialPerfil_conexao" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

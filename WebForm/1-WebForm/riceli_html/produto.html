@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Template Riceli</title>
+<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+ <script>
+    function UpdateTableHeaders() {
+       $(".persist-area").each(function() {
+       
+           var el             = $(this),
+               offset         = el.offset(),
+               scrollTop      = $(window).scrollTop(),
+               floatingHeader = $(".floatingHeader", this)
+           
+           if ((scrollTop > 50) && (scrollTop < offset.top + el.height())) {
+               floatingHeader.css({
+                "visibility": "visible"
+               });
+           } else {
+               floatingHeader.css({
+                "visibility": "hidden"
+               });      
+           };
+       });
+    }
+    
+    // DOM Ready      
+    $(function() {
+    
+       var clonedHeaderRow;
+    
+       $(".persist-area").each(function() {
+           clonedHeaderRow = $(".persist-header", this);
+           clonedHeaderRow
+             .before(clonedHeaderRow.clone())
+             .css("width", clonedHeaderRow.width())
+             .addClass("floatingHeader");
+             
+       });
+       
+       $(window)
+        .scroll(UpdateTableHeaders)
+        .trigger("scroll");
+       
+    });
+  </script>
+</head>
+
+<body>
+<div class="persist-area">
+<div id="topo">
+Olá Visitante! <img src="imagens/objetos/ico_conta.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> <a href="#">Sua Conta</a> | <img src="imagens/objetos/ico_pedidos.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> Seus Pedidos </div>
+<div id="header">
+<div>
+<div style="width:1003px; margin:auto; height:100px;" > 
+<img src="imagens/objetos/logo_header.png" title="Página Inicial" id="Logotipo"> 
+<div id="buscaBox">
+<input name="busca" type="text" id="busca" value="O que você deseja?" onFocus="if(this.value=='O que você deseja?')this.value='';"  onBlur="if(this.value=='')this.value='O que você deseja?';" >
+<!-- Se alterar o id do campo busca, alterar no css tb -->
+<input type="image" name="imageField" id="imageField" src="imagens/objetos/botao-busca.png" style="float:right; margin:2px;">
+</div>
+<div id="BotaoCarrinho" title="Meu Carrinho de compras">
+<strong style="padding-left:15px;" class="sombreado">Seu Carrinho (1)</strong>
+<div id="VisualizarCarrinho">
+  <h1>1 produto no meu carrinho</h1>
+  <hr noshade>
+  <div><img src="imagens/objetos/_produtos/produto-modelo.jpg" height="50" style="float:left;"></div><div class="Car_nome_prod"> Nome do Produto</div><div class="Car_nome_preco">
+R$ 159,95</div>
+</div>
+</div>
+</div>
+</div>
+    <div id="MenuPrincipal"> <a href="#"><img src="imagens/objetos/btn_home.png" style="padding:5px; float:left;" title="Página Inicial"></a> <div id="BotaoCategorias"> <a href="#">Todas as categorias</a>
+    <div id="submenu">
+    <ul>
+    	<li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+    </ul>
+    </div>
+    </div> 
+      <div  id="menu_superior"><ul>
+        <li>Roupas Femininas</li>
+        <li>Roupas Masculinas</li>
+        <li>Roupas Infantis</li>
+      </ul>
+      </div>
+    </div>
+</div>
+<div id="corpo">
+  <div id="conteudo" style="width:990px; margin-top:5px;">
+    <ul id="breadcrumb">
+ <li>Início</li>
+ <li>Roupas Femininas</li>
+ <li>Vestidos</li>
+ <li>Burcas</li>
+</ul>
+<hr>
+<div id="ColunaFotos">
+</div>
+<div id="ColunaDados">
+  <h1>Burca Preta Básica</h1>
+  <p><a href="#">Veja mais informações sobre o produto</a></p>
+  <div class="estoque">Há apenas <strong>03</strong> em estoque</div>
+  <h2>Selecione o tamanho </h2>
+  <p>
+  <div style="padding:5px; height:30px;" id="tamanhos">
+    <p><span>P</span>
+      <span class="checado">M</span>
+      <span>G</span>
+      <span style="background:url(imagens/objetos/tam_ind.png)">GG</span></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+  <h2>Selecione a cor </h2>
+ <div id="cores">
+   <img src="imagens/objetos/_produtos/cores-modelo.png" width="118" height="84"> </div>
+ <h2>Compartilhe</h2>
+ <div id="compartilhe">
+   <img src="imagens/objetos/ic_fb.png" style="margin:5px;"> <img src="imagens/objetos/ic_gpl.png" style="margin:5px;"><img src="imagens/objetos/ic_twt.png" style="margin:5px;"></div>
+</div>
+<div id="ColunaPreco">
+  <div class="preco">Por R$ 85,00</div>
+  <div class="parcelamento">
+  <p style="text-align:right;">em até 12x 
+<span class="parcela">R$ 7,53</span><br>
+sem juros</p>
+</div>
+  <div class="simular_parcelas"><a href="#">Simular Parcelamento</a></div>
+  <p><div class="btn_comprar">Comprar</div></p><BR>
+   <p><div class="btn_semEstoque">Sem Estoque</div>
+   <a href="#">* Avise-me quando chegar
+   </p>
+   </a></div>
+<div style="clear:both; height:10px;"></div>
+<h3>Descrição do Produto</h3>
+<div>
+Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição Descrição 
+</div>
+<h3>Características</h3>
+<div>
+Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto Caracteristicas do produto 
+</div>
+<div id="aviseme">
+
+</div>
+  </div><!-- Fecha div Conteudo -->
+</div>
+</div>
+<div id="barraRodape">
+  <ul>
+    <li>Dúvidas Frequentes</li>
+    <li>Política de Trocas e Devoluções</li>
+    <li>Prazo de Entrega</li>
+    <li>Como Comprar</li>
+    <li>Mapa do Site</li>
+    <li>Política de Privacidade</li>
+    <li>Política de Frete</li>
+    <li>Sobre</li>
+  </ul>
+
+</div>
+<div style="width:1003px; margin:auto;">
+    <div id="col1">
+    <h1>Formas de Pagamento</h1>
+    <p><img src="imagens/objetos/cart_visa.png" width="50" height="30"><img src="imagens/objetos/cart_master.png" width="50" height="30"><img src="imagens/objetos/cart_amex.png" width="50" height="30"><img src="imagens/objetos/boleto.png" width="50" height="30"></p>
+    </div>
+    <div id="col2">
+    <a href="https://developers.facebook.com/docs/plugins/follow-button">Followers</a></div>
+    <div id="col3">
+        <h1>+ Riceli</h1>
+        <p><img src="imagens/objetos/sprint_social_network.png" width="271" height="29"></p>
+    </div>
+</div>
+<div id="copyright">B2W - Companhia Digital / CNPJ: 00.776.574/0006-60 / Endereço: Rua Sacadura Cabral, 102 - Rio de Janeiro, RJ - 20081-902 </div>
+</div>
+</body>
+</html>

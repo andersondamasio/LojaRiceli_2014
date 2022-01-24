@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="351fdef6185a4995b96d0ce8b33b9a7a" Name="Diagram1">
+        <EntityTypeShape EntityType="CorreiosModel.FRETE" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_BAIRRO" Width="1.5" PointX="5.25" PointY="6.25" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_CONTROLE" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_CPC" Width="1.5" PointX="5.25" PointY="13.625" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_FAIXA_BAIRRO" Width="1.5" PointX="7.5" PointY="6.5" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_FAIXA_CPC" Width="1.5" PointX="7.5" PointY="14.375" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_FAIXA_LOCALIDADE" Width="1.5" PointX="5.25" PointY="10" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_FAIXA_UF" Width="1.5" PointX="0.75" PointY="10" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_FAIXA_UOP" Width="1.5" PointX="18" PointY="8.875" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_GRANDE_USUARIO" Width="1.5" PointX="12.75" PointY="8.25" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_LOCALIDADE" Width="1.5" PointX="3" PointY="9.5" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_LOGRADOURO" Width="1.5" PointX="10.5" PointY="7.625" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_TIPO_LOGR" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CorreiosModel.LOG_UNID_OPER" Width="1.5" PointX="15.75" PointY="8" />
+        <EntityTypeShape EntityType="CorreiosModel.SERVICO" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CorreiosModel.ATUALIZACOES_CONFIG" Width="1.5" PointX="0.75" PointY="5.75" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_BAIRRO_LOG_LOCALIDADE" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_FAIXA_BAIRRO_LOG_FAIXA_BAIRRO" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_BAIRRO" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_LOGRADOURO_LOG_BAIRRO" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_UNID_OPER_LOG_BAIRRO" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_CPC_LOG_LOCALIDADE" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_FAIXA_CPC_LOG_CPC" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_FAIXA_LOCALIDADE_LOG_LOCALIDADE" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_LOCALIDADE_LOG_FAIXA_UF" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_FAIXA_UOP_LOG_UNID_OPER" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOCALIDADE" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_GRANDE_USUARIO_LOG_LOGRADOURO" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_LOGRADOURO_LOG_LOCALIDADE" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOCALIDADE" />
+        <AssociationConnector Association="CorreiosModel.FK_LOG_UNID_OPER_LOG_LOGRADOURO" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

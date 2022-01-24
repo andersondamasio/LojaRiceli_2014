@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Template Riceli</title>
+<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+ <script>
+    function UpdateTableHeaders() {
+       $(".persist-area").each(function() {
+       
+           var el             = $(this),
+               offset         = el.offset(),
+               scrollTop      = $(window).scrollTop(),
+               floatingHeader = $(".floatingHeader", this)
+           
+           if ((scrollTop > 50) && (scrollTop < offset.top + el.height())) {
+               floatingHeader.css({
+                "visibility": "visible"
+               });
+           } else {
+               floatingHeader.css({
+                "visibility": "hidden"
+               });      
+           };
+       });
+    }
+    
+    // DOM Ready      
+    $(function() {
+    
+       var clonedHeaderRow;
+    
+       $(".persist-area").each(function() {
+           clonedHeaderRow = $(".persist-header", this);
+           clonedHeaderRow
+             .before(clonedHeaderRow.clone())
+             .css("width", clonedHeaderRow.width())
+             .addClass("floatingHeader");
+             
+       });
+       
+       $(window)
+        .scroll(UpdateTableHeaders)
+        .trigger("scroll");
+       
+    });
+  </script>
+</head>
+
+<body>
+<div class="persist-area">
+<div id="topo">
+Olá Visitante! <img src="imagens/objetos/ico_conta.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> <a href="#">Sua Conta</a> | <img src="imagens/objetos/ico_pedidos.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> Seus Pedidos </div>
+<div id="header">
+<div>
+<div style="width:1003px; margin:auto; height:100px;" > 
+<img src="imagens/objetos/logo_header.png" title="Página Inicial" id="Logotipo"> 
+<div id="buscaBox">
+<input name="busca" type="text" id="busca" value="O que você deseja?" onFocus="if(this.value=='O que você deseja?')this.value='';"  onBlur="if(this.value=='')this.value='O que você deseja?';" >
+<!-- Se alterar o id do campo busca, alterar no css tb -->
+<input type="image" name="imageField" id="imageField" src="imagens/objetos/botao-busca.png" style="float:right; margin:2px;">
+</div>
+<div id="BotaoCarrinho" title="Meu Carrinho de compras">
+<strong style="padding-left:15px;" class="sombreado">Seu Carrinho (1)</strong>
+<div id="VisualizarCarrinho">
+  <h1>1 produto no meu carrinho</h1>
+  <hr noshade>
+  <div><img src="imagens/objetos/_produtos/produto-modelo.jpg" height="50" style="float:left;"></div><div class="Car_nome_prod"> Nome do Produto</div><div class="Car_nome_preco">
+R$ 159,95</div>
+</div>
+</div>
+</div>
+</div>
+    <div id="MenuPrincipal"> <a href="#"><img src="imagens/objetos/btn_home.png" style="padding:5px; float:left;" title="Página Inicial"></a> <div id="BotaoCategorias"> <a href="#">Todas as categorias</a>
+    <div id="submenu">
+    <ul>
+    	<li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+    </ul>
+    </div>
+    </div> 
+      <div  id="menu_superior"><ul>
+        <li>Roupas Femininas</li>
+        <li>Roupas Masculinas</li>
+        <li>Roupas Infantis</li>
+      </ul>
+      </div>
+    </div>
+</div>
+<div id="corpo">
+  <div id="conteudo" style="width:990px; margin-top:5px;">
+<h1>Minha Conta</h1>
+<div id="Pedidos">
+<div style="border-bottom:1px solid #8A8A7B; height:30px;">
+    <ul class="abas">
+        <li class="aba2"><a href="#">Meu Cadastro</a></li>
+        <li>Meus Pedidos</li>
+    </ul>
+</div>
+<div class="pedido">
+
+<div class="colunaPrincipal">
+  <p>Nº do Pedido<br>
+    <strong>124789</strong>
+  </p>
+  <p>&nbsp;</p>
+  <p><a href="#">Verificar Status</a><br>
+    <br>
+    <strong><img src="imagens/objetos/seta_mostrar.png" style="vertical-align:middle;"> Exibir Produtos </strong></p>
+</div>
+<div class="coluna2"><strong>Realizado em</strong><br>
+20/11/13
+</div>
+<div class="coluna3"><strong>Forma de Pagamento</strong><br>
+Cartão de Crédito
+</div>
+<div class="coluna4"><strong>Prazo de Entrega</strong><br>
+4 dias úteis após a confirmação de pagamento.
+</div>
+<div class="coluna5"><strong>Endereço</strong><br>
+Rua Pedro VIriato Parigot de Souza, 141 - Cascavel/PR<br>
+CEP 85420-000 - Bairro Novo Milênio
+</div>
+<div class="coluna6"><strong>Itens</strong><br>
+02
+</div>
+<div class="coluna7"><strong>Condição</strong><br>
+07 x 189,00
+</div>
+<div style="clear:both; border-bottom:1px solid #CCC; margin:10px;"></div>
+
+<!-- Outro Pedido -->
+<div class="colunaPrincipal">
+  <p>Nº do Pedido<br>
+    <strong>124789</strong>
+  </p>
+  <p>&nbsp;</p>
+  <p><a href="#">Verificar Status</a><br>
+    <br>
+    <strong><img src="imagens/objetos/seta_mostrar.png" style="vertical-align:middle;"> Exibir Produtos </strong></p>
+</div>
+<div class="coluna2"><strong>Realizado em</strong><br>
+20/11/13
+</div>
+<div class="coluna3"><strong>Forma de Pagamento</strong><br>
+Cartão de Crédito
+</div>
+<div class="coluna4"><strong>Prazo de Entrega</strong><br>
+4 dias úteis após a confirmação de pagamento.
+</div>
+<div class="coluna5"><strong>Endereço</strong><br>
+Rua Pedro VIriato Parigot de Souza, 141 - Cascavel/PR<br>
+CEP 85420-000 - Bairro Novo Milênio
+</div>
+<div class="coluna6"><strong>Itens</strong><br>
+02
+</div>
+<div class="coluna7"><strong>Condição</strong><br>
+07 x 189,00
+</div>
+<div style="clear:both; border-bottom:1px solid #CCC"></div>
+<div class="status"><img src="imagens/objetos/linha-status-pedido.jpg" width="675" height="94"></div>
+<div class="barra_produtos" style="#F0F0F0;"><span style="width:400px;">Descrição do Produto</span><span> SKU</span><span> Qtd </span><span>Preço Unitário </span><span>Preço Total</span></div>
+<div class="produto">
+
+</div>
+<div>
+
+</div>
+<!-- Fim segundo pedido -->
+</div>
+</div>
+    <div style="clear:both; height:10px;"></div>
+  </div><!-- Fecha div Conteudo -->
+</div>
+</div>
+<div id="barraRodape">
+  <ul>
+    <li>Dúvidas Frequentes</li>
+    <li>Política de Trocas e Devoluções</li>
+    <li>Prazo de Entrega</li>
+    <li>Como Comprar</li>
+    <li>Mapa do Site</li>
+    <li>Política de Privacidade</li>
+    <li>Política de Frete</li>
+    <li>Sobre</li>
+  </ul>
+
+</div>
+<div style="width:1003px; margin:auto;">
+    <div id="col1">
+    <h1>Formas de Pagamento</h1>
+    <p><img src="imagens/objetos/cart_visa.png" width="50" height="30"><img src="imagens/objetos/cart_master.png" width="50" height="30"><img src="imagens/objetos/cart_amex.png" width="50" height="30"><img src="imagens/objetos/boleto.png" width="50" height="30"></p>
+    </div>
+    <div id="col2">
+    <a href="https://developers.facebook.com/docs/plugins/follow-button">Followers</a></div>
+    <div id="col3">
+        <h1>+ Riceli</h1>
+        <p><img src="imagens/objetos/sprint_social_network.png" width="271" height="29"></p>
+    </div>
+</div>
+<div id="copyright">B2W - Companhia Digital / CNPJ: 00.776.574/0006-60 / Endereço: Rua Sacadura Cabral, 102 - Rio de Janeiro, RJ - 20081-902 </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1578FB9-560B-4078-B020-9767C11F382F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_1_WebForm</RootNamespace>
+    <AssemblyName>1-WebForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60501.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\xBibliotecas\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\2-Library\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp">
+      <HintPath>..\..\packages\RestSharp.103.4\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2014.2.724.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q2 2014\Bin45\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q2 2014\Bin45\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\CriarLoja.aspx" />
+    <Content Include="App_Code\Cache\TransformXSLTGrupo.xsl" />
+    <Content Include="CabecalhoPagamento.ascx" />
+    <Content Include="CadastroPagamento.aspx" />
+    <Content Include="Carrinho.aspx" />
+    <Content Include="ConfirmaEmail.aspx" />
+    <Content Include="css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\images\ui-icons_454545_256x240.png" />
+    <Content Include="css\images\ui-icons_888888_256x240.png" />
+    <Content Include="css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="Gateway\RetornoAutPagSeguro.aspx" />
+    <Content Include="imagens\carregando.gif" />
+    <Content Include="imagens\objetos\bg_desc.png" />
+    <Content Include="imagens\objetos\cartoes.png" />
+    <Content Include="imagens\objetos\compartilhe-loja-riceli.png" />
+    <Content Include="imagens\objetos\cores-modelo.png" />
+    <Content Include="imagens\objetos\marcador.png" />
+    <Content Include="imagens\objetos\miniatura.jpg" />
+    <Content Include="imagens\objetos\modelo_cores.png" />
+    <Content Include="imagens\objetos\pag_seguro.png" />
+    <Content Include="imagens\objetos\produto-modelo.jpg" />
+    <Content Include="imagens\objetos\seta_dir.png" />
+    <Content Include="imagens\objetos\seta_esq.png" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-e113483-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-e113483-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-e113483-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-e113483-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-e113483.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10937\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10938\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10939\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10940\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-m-e113485-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-m-e113485-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-m-e113485-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-m-e113485-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-m-e113485.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113492-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113492-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113492-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113492-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-azul-p-e113492.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-roxo-g-e113477-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-roxo-g-e113477-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-roxo-g-e113477-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-roxo-g-e113477-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-roxo-g-e113477.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-g-e113484-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-g-e113484-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-g-e113484-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-g-e113484-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-g-e113484.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113487-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113487-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113487-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113487-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113487.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113488-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113488-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113488-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113488-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113488.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113489-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113489-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113489-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113489-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113489.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113490-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113490-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113490-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113490-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113490.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113491-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113491-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113491-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113491-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10941\short-sarja-tng-color-vermelho-m-e113491.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10942\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-azul-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113468-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113468-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113468-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113468-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113468.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113469-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113469-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113469-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113469-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10943\short-sarja-tng-color-verde-p-e113469.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10956\short-sarja-tng-color-azul-p-e113526-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10956\short-sarja-tng-color-azul-p-e113526-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10956\short-sarja-tng-color-azul-p-e113526-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10956\short-sarja-tng-color-azul-p-e113526-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10956\short-sarja-tng-color-azul-p-e113526.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-azul-m-e113532-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-azul-m-e113532-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-azul-m-e113532-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-azul-m-e113532-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-azul-m-e113532.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113530-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113530-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113530-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113530-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113530.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113534-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113534-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113534-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113534-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113534.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113535-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113535-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113535-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113535-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-roxo-p-e113535.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-verde-g-e113531-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-verde-g-e113531-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-verde-g-e113531-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-verde-g-e113531-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\10958\short-sarja-tng-color-verde-g-e113531.jpg" />
+    <Content Include="institucional\ajuda\como-posso-ganhar-pontos.aspx" />
+    <Content Include="institucional\potitica-de-privacidade.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginMinhaConta.aspx" />
+    <Content Include="MeuFeed.aspx" />
+    <Content Include="MeusAmigos.aspx" />
+    <Content Include="MeusEnderecos.aspx" />
+    <Content Include="MeusPedidos.aspx" />
+    <Content Include="MeuCadastro.aspx" />
+    <Content Include="App_Code\Configuracoes\PagSeguroConfig.xml" />
+    <Content Include="MeusPontos.aspx" />
+    <Content Include="PedidoConcluido.aspx" />
+    <Content Include="ProdutoBusca.aspx" />
+    <Content Include="RecuperarSenha.aspx" />
+    <Content Include="Redirecionamentos\NaoConfigurado.aspx" />
+    <Content Include="riceli_html\Carrinho.html" />
+    <Content Include="riceli_html\Página Pagamento.html" />
+    <Content Include="riceli_html\_images\bg_desc.png" />
+    <Content Include="riceli_html\_images\miniatura.jpg" />
+    <Content Include="riceli_html\_images\seta_dir.png" />
+    <Content Include="riceli_html\_images\seta_esq.png" />
+    <Content Include="scripts\jquery-ui.min.js" />
+    <Content Include="scripts\Social.js" />
+    <Content Include="scripts\Validacao.js" />
+    <Content Include="Service\ServiceRiceli.svc" />
+    <Content Include="Cabecalho.ascx" />
+    <Content Include="css\estilos.css" />
+    <Content Include="css\example.css" />
+    <Content Include="css\jquery.jqzoom.css" />
+    <Content Include="Global.asax" />
+    <Content Include="imagens\produtos\cores\amarelo.gif" />
+    <Content Include="imagens\produtos\cores\azul.gif" />
+    <Content Include="imagens\produtos\cores\cinza.gif" />
+    <Content Include="imagens\produtos\cores\laranja.gif" />
+    <Content Include="imagens\produtos\cores\preto.gif" />
+    <Content Include="imagens\produtos\cores\rosa.gif" />
+    <Content Include="imagens\produtos\cores\rosaverde.gif" />
+    <Content Include="imagens\produtos\cores\roxo.gif" />
+    <Content Include="imagens\produtos\cores\verde.gif" />
+    <Content Include="imagens\produtos\cores\vermelho.gif" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112376.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112377.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112378.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112379-a.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112379-d.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112379-m.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112379-v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\9902\sssssss-112379.jpg" />
+    <Content Include="imagens\produtos\fotos\v.jpg" />
+    <Content Include="imagens\produtos\fotos\9\sem-foto\sem-foto.jpg" />
+    <Content Include="imagens\zoomloader.gif" />
+    <Content Include="ProdutoDetalhe.aspx" />
+    <Content Include="ProdutoGrupo.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="scripts\jquery-1.6.js" />
+    <Content Include="scripts\jquery.jqzoom-core-pack.js" />
+    <Content Include="scripts\jquery.jqzoom-core.js" />
+    <Content Include="scripts\jquery.lazyload.min.js" />
+    <Content Include="scripts\Produto.js" />
+    <Content Include="Index.aspx" />
+    <Content Include="riceli_html\css\estilos.css" />
+    <Content Include="riceli_html\grupos.html" />
+    <Content Include="riceli_html\index.html" />
+    <Content Include="riceli_html\Meus Pedidos.html" />
+    <Content Include="riceli_html\Minha Conta.html" />
+    <Content Include="riceli_html\produto.html" />
+    <Content Include="riceli_html\Página Identificação.html" />
+    <Content Include="riceli_html\Recuperar Senha.html" />
+    <Content Include="riceli_html\scripts\jquery-1.10.2.min.js" />
+    <Content Include="riceli_html\teste-topo.html" />
+    <Content Include="riceli_html\_images\ba-header.jpg" />
+    <Content Include="riceli_html\_images\boleto.png" />
+    <Content Include="riceli_html\_images\botao-busca.png" />
+    <Content Include="riceli_html\_images\botao-categorias.png" />
+    <Content Include="riceli_html\_images\btn_home.png" />
+    <Content Include="riceli_html\_images\bt_ok.png" />
+    <Content Include="riceli_html\_images\bulett.png" />
+    <Content Include="riceli_html\_images\cart_amex.png" />
+    <Content Include="riceli_html\_images\cart_master.png" />
+    <Content Include="riceli_html\_images\cart_visa.png" />
+    <Content Include="riceli_html\_images\cor_modelo.png" />
+    <Content Include="riceli_html\_images\ico_conta.png" />
+    <Content Include="riceli_html\_images\ico_pedidos.png" />
+    <Content Include="riceli_html\_images\ic_fb.png" />
+    <Content Include="riceli_html\_images\ic_gpl.png" />
+    <Content Include="riceli_html\_images\ic_twt.png" />
+    <Content Include="riceli_html\_images\img-carrinho.png" />
+    <Content Include="riceli_html\_images\linha-status-pedido.jpg" />
+    <Content Include="riceli_html\_images\logo_160x50.png" />
+    <Content Include="riceli_html\_images\logo_header.png" />
+    <Content Include="riceli_html\_images\seta.png" />
+    <Content Include="riceli_html\_images\seta_mostrar.png" />
+    <Content Include="riceli_html\_images\sprint_social_network.png" />
+    <Content Include="riceli_html\_images\tam_ind.png" />
+    <Content Include="riceli_html\_images\_produtos\amarelo.gif" />
+    <Content Include="riceli_html\_images\_produtos\azul.gif" />
+    <Content Include="riceli_html\_images\_produtos\banner-modelo.jpg" />
+    <Content Include="riceli_html\_images\_produtos\cinza.gif" />
+    <Content Include="riceli_html\_images\_produtos\cores-modelo.png" />
+    <Content Include="riceli_html\_images\_produtos\icone_mais_cores.png" />
+    <Content Include="riceli_html\_images\_produtos\laranja.gif" />
+    <Content Include="riceli_html\_images\_produtos\marcador.png" />
+    <Content Include="riceli_html\_images\_produtos\modelo_cores.png" />
+    <Content Include="riceli_html\_images\_produtos\preto.gif" />
+    <Content Include="riceli_html\_images\_produtos\produto-modelo.jpg" />
+    <Content Include="riceli_html\_images\_produtos\rosa.gif" />
+    <Content Include="riceli_html\_images\_produtos\rosaverde.gif" />
+    <Content Include="riceli_html\_images\_produtos\roxo.gif" />
+    <Content Include="riceli_html\_images\_produtos\verde.gif" />
+    <Content Include="riceli_html\_images\_produtos\vermelho.gif" />
+    <Content Include="riceli_html\_images\_reload_alt.png" />
+    <Content Include="riceli_html\_material\bottom_pagseguro2.png.pagespeed.ce.gYNvqcVdmU.png" />
+    <Content Include="riceli_html\_material\layout.fw.png" />
+    <Content Include="riceli_html\_material\proposta layout.fw.png" />
+    <Content Include="riceli_html\_material\proposta layout2.fw.png" />
+    <Content Include="riceli_html\_material\proposta logo.png" />
+    <Content Include="riceli_html\_material\Página Carrinho.fw.png" />
+    <Content Include="riceli_html\_material\Página Confirmação.fw.png" />
+    <Content Include="riceli_html\_material\Página Grupos.fw.png" />
+    <Content Include="riceli_html\_material\Página Identificacao.fw.png" />
+    <Content Include="riceli_html\_material\Página Meus Pedidos.fw.png" />
+    <Content Include="riceli_html\_material\Página Minha Conta.fw.png" />
+    <Content Include="riceli_html\_material\Página Pagamento.fw.png" />
+    <Content Include="riceli_html\_material\Página Politicas.fw.png" />
+    <Content Include="riceli_html\_material\Página Produto.fw.png" />
+    <Content Include="riceli_html\_material\Página Recuperar Senha.fw.png" />
+    <Content Include="riceli_html\_material\wireframe.fw.png" />
+    <Content Include="Rodape.ascx" />
+    <Content Include="scripts\global.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\ProdutoDetalhe.js" />
+    <Content Include="Service\ServiceRiceli.js" />
+    <Content Include="Service\ServiceSocial.js" />
+    <Content Include="Service\ServiceSocial.svc" />
+    <Content Include="Social\LoginSocial.aspx" />
+    <Content Include="Social\LoginSocialRetorno.aspx" />
+    <Content Include="Teste.aspx" />
+    <Content Include="TesteX.aspx" />
+    <Content Include="UserControls\MensagemBoasVindas.ascx" />
+    <Content Include="UserControls\SocialLinksCompartilhar.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="imagens\objetos\ba-header.jpg" />
+    <Content Include="imagens\objetos\boleto.png" />
+    <Content Include="imagens\objetos\botao-busca.png" />
+    <Content Include="imagens\objetos\botao-categorias.png" />
+    <Content Include="imagens\objetos\btn_home.png" />
+    <Content Include="imagens\objetos\bt_ok.png" />
+    <Content Include="imagens\objetos\bulett.png" />
+    <Content Include="imagens\objetos\cart_amex.png" />
+    <Content Include="imagens\objetos\cart_master.png" />
+    <Content Include="imagens\objetos\cart_visa.png" />
+    <Content Include="imagens\objetos\cor_modelo.png" />
+    <Content Include="imagens\objetos\ico_conta.png" />
+    <Content Include="imagens\objetos\ico_pedidos.png" />
+    <Content Include="imagens\objetos\ic_fb.png" />
+    <Content Include="imagens\objetos\ic_gpl.png" />
+    <Content Include="imagens\objetos\ic_twt.png" />
+    <Content Include="imagens\objetos\img-carrinho.png" />
+    <Content Include="imagens\objetos\linha-status-pedido.jpg" />
+    <Content Include="imagens\objetos\logo_160x50.png" />
+    <Content Include="imagens\objetos\logo_header.png" />
+    <Content Include="imagens\objetos\seta.png" />
+    <Content Include="imagens\objetos\seta_mostrar.png" />
+    <Content Include="imagens\objetos\sprint_social_network.png" />
+    <Content Include="imagens\objetos\tam_ind.png" />
+    <Content Include="imagens\objetos\banner-modelo.jpg" />
+    <Content Include="imagens\objetos\icone_mais_cores.png" />
+    <Content Include="imagens\objetos\_reload_alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\CriarLoja.aspx.cs">
+      <DependentUpon>CriarLoja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CriarLoja.aspx.designer.cs">
+      <DependentUpon>CriarLoja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Utils\CustomIdentity.cs" />
+    <Compile Include="App_Code\Utils\CustomPrincipal.cs" />
+    <Compile Include="App_Code\Utils\Recursos.cs" />
+    <Compile Include="CabecalhoPagamento.ascx.cs">
+      <DependentUpon>CabecalhoPagamento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CabecalhoPagamento.ascx.designer.cs">
+      <DependentUpon>CabecalhoPagamento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPagamento.aspx.cs">
+      <DependentUpon>CadastroPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPagamento.aspx.designer.cs">
+      <DependentUpon>CadastroPagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrinho.aspx.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrinho.aspx.designer.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmaEmail.aspx.cs">
+      <DependentUpon>ConfirmaEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmaEmail.aspx.designer.cs">
+      <DependentUpon>ConfirmaEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gateway\RetornoAutPagSeguro.aspx.cs">
+      <DependentUpon>RetornoAutPagSeguro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gateway\RetornoAutPagSeguro.aspx.designer.cs">
+      <DependentUpon>RetornoAutPagSeguro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="institucional\ajuda\como-posso-ganhar-pontos.aspx.cs">
+      <DependentUpon>como-posso-ganhar-pontos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="institucional\ajuda\como-posso-ganhar-pontos.aspx.designer.cs">
+      <DependentUpon>como-posso-ganhar-pontos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="institucional\potitica-de-privacidade.aspx.cs">
+      <DependentUpon>potitica-de-privacidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="institucional\potitica-de-privacidade.aspx.designer.cs">
+      <DependentUpon>potitica-de-privacidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMinhaConta.aspx.cs">
+      <DependentUpon>LoginMinhaConta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMinhaConta.aspx.designer.cs">
+      <DependentUpon>LoginMinhaConta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeuFeed.aspx.cs">
+      <DependentUpon>MeuFeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeuFeed.aspx.designer.cs">
+      <DependentUpon>MeuFeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeusAmigos.aspx.cs">
+      <DependentUpon>MeusAmigos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusAmigos.aspx.designer.cs">
+      <DependentUpon>MeusAmigos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeusEnderecos.aspx.cs">
+      <DependentUpon>MeusEnderecos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusEnderecos.aspx.designer.cs">
+      <DependentUpon>MeusEnderecos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeusPedidos.aspx.cs">
+      <DependentUpon>MeusPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusPedidos.aspx.designer.cs">
+      <DependentUpon>MeusPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeuCadastro.aspx.cs">
+      <DependentUpon>MeuCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeuCadastro.aspx.designer.cs">
+      <DependentUpon>MeuCadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeusPontos.aspx.cs">
+      <DependentUpon>MeusPontos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusPontos.aspx.designer.cs">
+      <DependentUpon>MeusPontos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoConcluido.aspx.cs">
+      <DependentUpon>PedidoConcluido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoConcluido.aspx.designer.cs">
+      <DependentUpon>PedidoConcluido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoBusca.aspx.cs">
+      <DependentUpon>ProdutoBusca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProdutoBusca.aspx.designer.cs">
+      <DependentUpon>ProdutoBusca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarSenha.aspx.cs">
+      <DependentUpon>RecuperarSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarSenha.aspx.designer.cs">
+      <DependentUpon>RecuperarSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirecionamentos\NaoConfigurado.aspx.cs">
+      <DependentUpon>NaoConfigurado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirecionamentos\NaoConfigurado.aspx.designer.cs">
+      <DependentUpon>NaoConfigurado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServiceRiceli.svc.cs">
+      <DependentUpon>ServiceRiceli.svc</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Utils\UrlReWriteRouteHandlerProduto.cs" />
+    <Compile Include="App_Code\Utils\UrlReWriteRouteHandlerProdutoCorTamanho.cs" />
+    <Compile Include="Cabecalho.ascx.cs">
+      <DependentUpon>Cabecalho.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cabecalho.ascx.designer.cs">
+      <DependentUpon>Cabecalho.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoDetalhe.aspx.cs">
+      <DependentUpon>ProdutoDetalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProdutoDetalhe.aspx.designer.cs">
+      <DependentUpon>ProdutoDetalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoGrupo.aspx.cs">
+      <DependentUpon>ProdutoGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProdutoGrupo.aspx.designer.cs">
+      <DependentUpon>ProdutoGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rodape.ascx.cs">
+      <DependentUpon>Rodape.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rodape.ascx.designer.cs">
+      <DependentUpon>Rodape.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServiceSocial.svc.cs">
+      <DependentUpon>ServiceSocial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Social\LoginSocial.aspx.cs">
+      <DependentUpon>LoginSocial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Social\LoginSocial.aspx.designer.cs">
+      <DependentUpon>LoginSocial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Social\LoginSocialRetorno.aspx.cs">
+      <DependentUpon>LoginSocialRetorno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Social\LoginSocialRetorno.aspx.designer.cs">
+      <DependentUpon>LoginSocialRetorno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teste.aspx.cs">
+      <DependentUpon>Teste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teste.aspx.designer.cs">
+      <DependentUpon>Teste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TesteX.aspx.cs">
+      <DependentUpon>TesteX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TesteX.aspx.designer.cs">
+      <DependentUpon>TesteX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MensagemBoasVindas.ascx.cs">
+      <DependentUpon>MensagemBoasVindas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MensagemBoasVindas.ascx.designer.cs">
+      <DependentUpon>MensagemBoasVindas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SocialLinksCompartilhar.ascx.cs">
+      <DependentUpon>SocialLinksCompartilhar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SocialLinksCompartilhar.ascx.designer.cs">
+      <DependentUpon>SocialLinksCompartilhar.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="riceli_html\_images\_notes\ba-header.jpg.mno" />
+    <Content Include="riceli_html\_material\Cópia_de_segurança_de_proposta logo.cdr" />
+    <Content Include="riceli_html\_material\proposta logo.cdr" />
+    <None Include="Properties\PublishProfiles\Publish.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Library\2-Library\2-Library.csproj">
+      <Project>{b7c5045e-7d7b-4584-aab2-78fb9664642e}</Project>
+      <Name>2-Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xFramework\PagSeguro\Uol.PagSeguro\Uol.PagSeguro.csproj">
+      <Project>{babc5658-6afd-4f8e-81f1-434553663d99}</Project>
+      <Name>Uol.PagSeguro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imagens\produtos\outros\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63432</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseJQuerySupport="False" UseAjaxifiedTemplates="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

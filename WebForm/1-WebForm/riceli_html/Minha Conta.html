@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Template Riceli</title>
+<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+ <script>
+    function UpdateTableHeaders() {
+       $(".persist-area").each(function() {
+       
+           var el             = $(this),
+               offset         = el.offset(),
+               scrollTop      = $(window).scrollTop(),
+               floatingHeader = $(".floatingHeader", this)
+           
+           if ((scrollTop > 50) && (scrollTop < offset.top + el.height())) {
+               floatingHeader.css({
+                "visibility": "visible"
+               });
+           } else {
+               floatingHeader.css({
+                "visibility": "hidden"
+               });      
+           };
+       });
+    }
+    
+    // DOM Ready      
+    $(function() {
+    
+       var clonedHeaderRow;
+    
+       $(".persist-area").each(function() {
+           clonedHeaderRow = $(".persist-header", this);
+           clonedHeaderRow
+             .before(clonedHeaderRow.clone())
+             .css("width", clonedHeaderRow.width())
+             .addClass("floatingHeader");
+             
+       });
+       
+       $(window)
+        .scroll(UpdateTableHeaders)
+        .trigger("scroll");
+       
+    });
+  </script>
+</head>
+
+<body>
+<div class="persist-area">
+<div id="topo">
+Olá Visitante! <img src="imagens/objetos/ico_conta.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> <a href="#">Sua Conta</a> | <img src="imagens/objetos/ico_pedidos.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> Seus Pedidos </div>
+<div id="header">
+<div>
+<div style="width:1003px; margin:auto; height:100px;" > 
+<img src="imagens/objetos/logo_header.png" title="Página Inicial" id="Logotipo"> 
+<div id="buscaBox">
+<input name="busca" type="text" id="busca" value="O que você deseja?" onFocus="if(this.value=='O que você deseja?')this.value='';"  onBlur="if(this.value=='')this.value='O que você deseja?';" >
+<!-- Se alterar o id do campo busca, alterar no css tb -->
+<input type="image" name="imageField" id="imageField" src="imagens/objetos/botao-busca.png" style="float:right; margin:2px;">
+</div>
+<div id="BotaoCarrinho" title="Meu Carrinho de compras">
+<strong style="padding-left:15px;" class="sombreado">Seu Carrinho (1)</strong>
+<div id="VisualizarCarrinho">
+  <h1>1 produto no meu carrinho</h1>
+  <hr noshade>
+  <div><img src="imagens/objetos/_produtos/produto-modelo.jpg" height="50" style="float:left;"></div><div class="Car_nome_prod"> Nome do Produto</div><div class="Car_nome_preco">
+R$ 159,95</div>
+</div>
+</div>
+</div>
+</div>
+    <div id="MenuPrincipal"> <a href="#"><img src="imagens/objetos/btn_home.png" style="padding:5px; float:left;" title="Página Inicial"></a> <div id="BotaoCategorias"> <a href="#">Todas as categorias</a>
+    <div id="submenu">
+    <ul>
+    	<li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+    </ul>
+    </div>
+    </div> 
+      <div  id="menu_superior"><ul>
+        <li>Roupas Femininas</li>
+        <li>Roupas Masculinas</li>
+        <li>Roupas Infantis</li>
+      </ul>
+      </div>
+    </div>
+</div>
+<div id="corpo">
+  <div id="conteudo" style="width:990px; margin-top:5px;">
+<h1>Minha Conta</h1>
+<div id="conta">
+<div style="border-bottom:1px solid #8A8A7B; height:30px;">
+    <ul class="abas">
+        <li>Meu Cadastro</li>
+        <li class="aba2"><a href="#">Meus Pedidos</a></li>
+    </ul>
+</div>
+<div id="col1">
+<form action="" method="get">
+  <p>
+    <label for="textfield">Email</label>
+    <input name="textfield" type="text" disabled class="form_conta" id="textfield" value="seuemail@dominio.com">
+  </p>
+  <p>
+    <label for="textfield2">CPF</label>
+    <input name="textfield2" type="text" class="form_conta" id="textfield2">
+  </p>
+  <p>
+    <label for="textfield3">Nome</label>
+    <input name="textfield3" type="text" class="form_conta" id="textfield3">
+  </p>
+  <p>
+    <label for="textfield4">Sobrenome</label>
+    <input name="textfield4" type="text" class="form_conta" id="textfield4">
+  </p>
+  <p>
+    <label for="select">Data de Nascimento</label>
+    <select name="select" size="1" class="form_list" id="select">
+      <option>01</option>
+      <option>02</option>
+      <option>03</option>
+      <option>04</option>
+    </select>
+    <select name="select2" size="1" class="form_list" id="select2">
+      <option>Jan</option>
+      <option>Fev</option>
+      <option>Mar</option>
+      <option>Abr</option>
+    </select>
+    <select name="select3" size="1" class="form_list" id="select3">
+      <option>1970</option>
+      <option value="1972">1971</option>
+      <option value="1">1972</option>
+      <option>1973</option>
+    </select>
+  </p>
+  <p>
+    <label for="select4">Sexo</label>
+    <select name="select4" size="1" class="form_list" id="select4">
+      <option>Feminino</option>
+      <option>Masculino</option>
+    </select>
+  </p>
+  <p>&nbsp;</p>
+</form>
+</div>
+<div id="col2">
+<form action="" method="get">
+  <p>
+    <label for="textfield5">CEP</label>
+    <input name="textfield5" type="text" class="form_conta" id="textfield5">
+  </p>
+  <p>
+    <label for="textfield6">Endereço</label>
+    <input name="textfield6" type="text" class="form_conta" id="textfield6">
+  </p>
+  <p>
+    <label for="textfield7">Complemento</label>
+    <input name="textfield7" type="text" class="form_conta" id="textfield7">
+  </p>
+  <p>
+    <label for="textfield8">Bairro</label>
+    <input name="textfield8" type="text" class="form_conta" id="textfield8">
+  </p>
+  <p>
+  <div style="width:70%; float:left;">
+    <label for="textfield9">Cidade</label>
+    <input name="textfield9" type="text" class="form_conta" id="textfield9">
+    </div>
+    <div style="width:25%; float:right;">
+    <label for="textfield9">Estado</label>
+    <select name="select5" size="1" class="form_list" id="select5">
+      <option>PR</option>
+      <option>SP</option>
+    </select>
+    </div>
+  </p>
+  <p>
+    <label for="textfield10">Referência</label>
+    <input name="textfield10" type="text" class="form_conta" id="textfield10">
+  </p>
+</form>
+</div>
+<div id="col3">
+<form action="" method="get">
+<div style="width:25%; float:left;">
+  <label for="textfield11">DDD</label>
+  <input name="textfield11" type="text" class="form_conta" id="textfield11">
+  </div>
+  <div style="width:70%; float:right">
+   <label for="textfield11">Telefone Comercial</label>
+  <input name="textfield11" type="text" class="form_conta" id="textfield11">
+  </div>
+  <div style="width:25%; float:left;">
+  <label for="textfield11">DDD</label>
+  <input name="textfield11" type="text" class="form_conta" id="textfield11">
+  </div>
+  <div style="width:70%; float:right">
+   <label for="textfield11">Telefone Residencial</label>
+  <input name="textfield11" type="text" class="form_conta" id="textfield11">
+  
+  </div>
+    <div style="width:25%; float:left;">
+  <label for="textfield11">DDD</label>
+  <input name="textfield11" type="text" class="form_conta" id="textfield11">
+  </div>
+  <div style="width:70%; float:right">
+   <label for="textfield11">Telefone Celular</label>
+  <input name="textfield11" type="text" class="form_conta" id="textfield11">
+  
+  </div>
+  <div style="clear:both; padding:5px;">
+    <p>
+      <input name="checkbox" type="checkbox" id="checkbox" checked> 
+      Aceito receber ofertas e descontos exclusivos no email
+    </p>
+    <p>
+      <input type="submit" name="button" id="button" value="Salvar Alterações" class="btn_form">
+    </p>
+  </div>
+</form>
+</div>
+</div>
+    <div style="clear:both; height:10px;"></div>
+  </div><!-- Fecha div Conteudo -->
+</div>
+</div>
+<div id="barraRodape">
+  <ul>
+    <li>Dúvidas Frequentes</li>
+    <li>Política de Trocas e Devoluções</li>
+    <li>Prazo de Entrega</li>
+    <li>Como Comprar</li>
+    <li>Mapa do Site</li>
+    <li>Política de Privacidade</li>
+    <li>Política de Frete</li>
+    <li>Sobre</li>
+  </ul>
+
+</div>
+<div style="width:1003px; margin:auto;">
+    <div id="col1">
+    <h1>Formas de Pagamento</h1>
+    <p><img src="imagens/objetos/cart_visa.png" width="50" height="30"><img src="imagens/objetos/cart_master.png" width="50" height="30"><img src="imagens/objetos/cart_amex.png" width="50" height="30"><img src="imagens/objetos/boleto.png" width="50" height="30"></p>
+    </div>
+    <div id="col2">
+    <a href="https://developers.facebook.com/docs/plugins/follow-button">Followers</a></div>
+    <div id="col3">
+        <h1>+ Riceli</h1>
+        <p><img src="imagens/objetos/sprint_social_network.png" width="271" height="29"></p>
+    </div>
+</div>
+<div id="copyright">B2W - Companhia Digital / CNPJ: 00.776.574/0006-60 / Endereço: Rua Sacadura Cabral, 102 - Rio de Janeiro, RJ - 20081-902 </div>
+</div>
+</body>
+</html>

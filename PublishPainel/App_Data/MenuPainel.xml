@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<Item Text="Configurações" Value="usuPer_configuracao" NavigateUrl="">
+		<Item Text="Boletos" Value="Boletos" NavigateUrl="~/ConfiguracaoBoleto.aspx"/>
+		<Item Text="Cartões" Value="Cartões" NavigateUrl="~/ConfiguracaoCartao.aspx"></Item>
+		<Item Text="Parcelamentos" Value="Parcelamentos" NavigateUrl="~/CadastroParcelamento.aspx"></Item>
+		<Item Text="Pedido" Value="Pedido" NavigateUrl="">
+			<Item Text="Status" Value="Status" NavigateUrl="~/ConfiguracaoPedidoStatus.aspx"></Item>
+		</Item>
+		<Item Text="Lojas" Value="usuPer_lojaSelecionar" NavigateUrl="~/ConfiguracaoLoja.aspx"></Item>
+	</Item>
+	<Item Text="Recursos" Value="Recursos" NavigateUrl="">
+		<Item NavigateUrl="~/RecursosCarrinho.aspx" Text="Carrinho" Value="Carrinho"></Item>
+	</Item>
+	<Item Text="Usuários" Value="" NavigateUrl="~/Usuario.aspx">
+	</Item>
+	<Item Text="Avise-me" Value="" NavigateUrl="~/ProdutoAviso.aspx">
+	</Item>
+	<Item Text="Avaliações" Value="" Enabled="False" NavigateUrl="">
+	</Item>
+	<Item Text="Banners" Value="" Enabled="False" NavigateUrl="">
+	</Item>
+	<Item NavigateUrl="~/CadastroGrupo.aspx" Text="Produtos" Value="Produtos"></Item>
+	<Item Text="Clientes" Value="" NavigateUrl="~/Cliente.aspx">
+	</Item>
+	<Item Text="Cupons" Value="" NavigateUrl="~/Cupom.aspx">
+	</Item>
+	<Item Text="Pedidos" Value="" NavigateUrl="~/Pedido.aspx">
+	</Item>
+	<Item Text="Newsletter" Value="" Enabled="False" NavigateUrl="">
+	</Item>
+	<Item Text="Entrega" Value="" NavigateUrl="~/Entrega.aspx">
+	</Item>
+	<Item Text="Relatórios" Value="Relatórios" Enabled="False" NavigateUrl="">
+	</Item>
+</Items>
+

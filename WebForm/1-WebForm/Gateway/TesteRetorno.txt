@@ -1,0 +1,1 @@
+notificationType:transaction - notificationCode:AF27A8A742584258998FF49DCF965EE324C9 - dataHora: 19/06/2014 01:03:03

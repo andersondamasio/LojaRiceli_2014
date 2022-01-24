@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Template Riceli</title>
+<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+ <script>
+    function UpdateTableHeaders() {
+       $(".persist-area").each(function() {
+       
+           var el             = $(this),
+               offset         = el.offset(),
+               scrollTop      = $(window).scrollTop(),
+               floatingHeader = $(".floatingHeader", this)
+           
+           if ((scrollTop > 50) && (scrollTop < offset.top + el.height())) {
+               floatingHeader.css({
+                "visibility": "visible"
+               });
+           } else {
+               floatingHeader.css({
+                "visibility": "hidden"
+               });      
+           };
+       });
+    }
+    
+    // DOM Ready      
+    $(function() {
+    
+       var clonedHeaderRow;
+    
+       $(".persist-area").each(function() {
+           clonedHeaderRow = $(".persist-header", this);
+           clonedHeaderRow
+             .before(clonedHeaderRow.clone())
+             .css("width", clonedHeaderRow.width())
+             .addClass("floatingHeader");
+             
+       });
+       
+       $(window)
+        .scroll(UpdateTableHeaders)
+        .trigger("scroll");
+       
+    });
+  </script>
+</head>
+
+<body>
+<div class="persist-area">
+<div id="topo">
+Olá Visitante! <img src="imagens/objetos/ico_conta.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> <a href="#">Sua Conta</a> | <img src="imagens/objetos/ico_pedidos.png" style="vertical-align:-20%; margin-right:5px; margin-left:5px;"> Seus Pedidos </div>
+<div id="header">
+<div>
+<div style="width:1003px; margin:auto; height:100px;" > 
+<img src="imagens/objetos/logo_header.png" title="Página Inicial" id="Logotipo"> 
+<div id="buscaBox">
+<input name="busca" type="text" id="busca" value="O que você deseja?" onFocus="if(this.value=='O que você deseja?')this.value='';"  onBlur="if(this.value=='')this.value='O que você deseja?';" >
+<!-- Se alterar o id do campo busca, alterar no css tb -->
+<input type="image" name="imageField" id="imageField" src="imagens/objetos/botao-busca.png" style="float:right; margin:2px;">
+</div>
+<div id="BotaoCarrinho" title="Meu Carrinho de compras">
+<strong style="padding-left:15px;">Seu Carrinho (1)</strong>
+<div id="VisualizarCarrinho">
+  <h1>1 produto no meu carrinho</h1>
+  <hr noshade>
+  <div><img src="imagens/objetos/_produtos/produto-modelo.jpg" height="50" style="float:left;"></div><div class="Car_nome_prod"> Nome do Produto</div><div class="Car_nome_preco">
+R$ 159,95</div>
+</div>
+</div>
+</div>
+</div>
+    <div id="MenuPrincipal"> <a href="#"><img src="imagens/objetos/btn_home.png" style="padding:5px; float:left;" title="Página Inicial"></a> <div id="BotaoCategorias"> <a href="#">Todas as categorias</a>
+    <div id="submenu">
+    <ul>
+    	<li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+        <li> Categoria </li>
+    </ul>
+    </div>
+    </div> 
+      <div  id="menu_superior"><ul>
+        <li>Roupas Femininas</li>
+        <li>Roupas Masculinas</li>
+        <li>Roupas Infantis</li>
+      </ul>
+      </div>
+    </div>
+</div>
+<div id="banner"><img src="imagens/objetos/_produtos/banner-modelo.jpg" width="800" height="247"></div>
+<div id="corpo">
+<nav id="menuLateral">
+  <ul>
+    <li>
+      <h1>Feminino</h1>
+    </li>
+    <li>
+      <ul>
+        <li><a href="#">Vestidos</a></li>
+        <li><a href="#">Pijamas</a></li>
+        <li><a href="#">Saias</a></li>
+        <li><a href="#">Camisetas</a></li>
+      </ul>
+    </li>
+    <li>
+      <h1>Masculino</h1>
+    </li>
+    <li>
+      <ul>
+        <li><a href="#">Camisas</a></li>
+        <li><a href="#">Bermudas</a></li>
+        <li><a href="#">Calças</a></li>
+        <li><a href="#">Ternos</a></li>
+      </ul>
+    </li>
+  </ul>
+<h1>Descontos e Ofertas</h1>
+<div style="line-height:25px;">
+<p>Receba promoções em primeira mão.</p>
+<p>
+  <input type="radio" name="radio" id="radio" value="radio">
+  Sou homem <input type="radio" name="radio" id="radio" value="radio">
+  Sou Mulher </p>
+<input type="text" name="textfield" id="textfield" style="height:25px;">
+<input name="imageField2" type="image" id="imageField2" src="imagens/objetos/bt_ok.png" align="middle">
+</div>
+</nav>
+<div id="conteudo">
+<h2>Os mais vendidos</h2>
+<div class="produto">
+<div class="produto_desconto">-25%</div>
+  <img src="imagens/objetos/_produtos/produto-modelo.jpg"><br>
+  <div class="Cores CorAtiva" style="background:#FF0;"></div><div class="Cores " style="background:#06F;"></div><div class="Cores"><img src="imagens/objetos/_produtos/icone_mais_cores.png"></div><br>
+  <div class="produto_nome">Nome do produto</div>
+  <div class="produto_preco">R$85,00</div>
+  <div class="produto_parcelas">12x de R$7,52 sem juros</div>
+  <div class="produto_frete">Frete Grátis</div>
+</div>
+<div class="produto">
+ <div class="produto_desconto">-25%</div> <img src="imagens/objetos/_produtos/produto-modelo.jpg"><br>
+  <img src="imagens/objetos/_produtos/amarelo.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/azul.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/laranja.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/rosaverde.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/icone_mais_cores.png" style="margin:3px;"><br>
+  <div class="produto_nome">Nome do produto</div>
+  <div class="produto_preco">R$85,00</div>
+  <div class="produto_parcelas">12x de R$7,52 sem juros</div>
+  <div class="produto_frete">Frete Grátis</div>
+  
+</div>
+<div class="produto"> 
+<div class="produto_desconto">-25%</div>
+<img src="imagens/objetos/_produtos/produto-modelo.jpg">
+<br>
+  <img src="imagens/objetos/_produtos/amarelo.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/azul.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/laranja.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/rosaverde.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/icone_mais_cores.png" style="margin:3px;"><br>
+  <div class="produto_nome">Nome do produto</div>
+  <div class="produto_preco">R$85,00</div>
+  <div class="produto_parcelas">12x de R$7,52 sem juros</div>
+  <div class="produto_frete"></div>
+ 
+</div>
+  <!-- inicio segunda linha -->
+   <div style="clear:both; height:10px;"></div>
+  <div class="produto">
+<div class="produto_desconto">-25%</div>
+  <img src="imagens/objetos/_produtos/produto-modelo.jpg"><br>
+  <div class="Cores CorAtiva" style="background:#FF0;"></div><div class="Cores " style="background:#06F;"></div><div class="Cores"><img src="imagens/objetos/_produtos/icone_mais_cores.png"></div><br>
+  <div class="produto_nome">Nome do produto</div>
+  <div class="produto_preco">R$85,00</div>
+  <div class="produto_parcelas">12x de R$7,52 sem juros</div>
+  <div class="produto_frete">Frete Grátis</div>
+</div>
+<div class="produto">
+ <div class="produto_desconto">-25%</div> <img src="imagens/objetos/_produtos/produto-modelo.jpg"><br>
+  <img src="imagens/objetos/_produtos/amarelo.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/azul.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/laranja.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/rosaverde.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/icone_mais_cores.png" style="margin:3px;"><br>
+  <div class="produto_nome">Nome do produto</div>
+  <div class="produto_preco">R$85,00</div>
+  <div class="produto_parcelas">12x de R$7,52 sem juros</div>
+  <div class="produto_frete">Frete Grátis</div>
+  
+</div>
+<div class="produto"> 
+<div class="produto_desconto">-25%</div>
+<img src="imagens/objetos/_produtos/produto-modelo.jpg">
+<br>
+  <img src="imagens/objetos/_produtos/amarelo.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/azul.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/laranja.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/rosaverde.gif" style="margin:3px;"><img src="imagens/objetos/_produtos/icone_mais_cores.png" style="margin:3px;"><br>
+  <div class="produto_nome">Nome do produto</div>
+  <div class="produto_preco">R$85,00</div>
+  <div class="produto_parcelas">12x de R$7,52 sem juros</div>
+  <div class="produto_frete">Frete Grátis</div>
+ 
+</div>
+  <!-- Fim segunda linha -->
+   </div>
+</div>
+</div>
+<div id="barraRodape">
+  <ul>
+    <li>Dúvidas Frequentes</li>
+    <li>Política de Trocas e Devoluções</li>
+    <li>Prazo de Entrega</li>
+    <li>Como Comprar</li>
+    <li>Mapa do Site</li>
+    <li>Política de Privacidade</li>
+    <li>Política de Frete</li>
+    <li>Sobre</li>
+  </ul>
+
+</div>
+<div style="width:1003px; margin:auto;">
+    <div id="col1">
+    <h1>Formas de Pagamento</h1>
+    <p><img src="imagens/objetos/cart_visa.png" width="50" height="30"><img src="imagens/objetos/cart_master.png" width="50" height="30"><img src="imagens/objetos/cart_amex.png" width="50" height="30"><img src="imagens/objetos/boleto.png" width="50" height="30"></p>
+    </div>
+    <div id="col2">
+    <a href="https://developers.facebook.com/docs/plugins/follow-button">Followers</a></div>
+    <div id="col3">
+        <h1>+ Riceli</h1>
+        <p><img src="imagens/objetos/sprint_social_network.png" width="271" height="29"></p>
+    </div>
+</div>
+<div id="copyright">B2W - Companhia Digital / CNPJ: 00.776.574/0006-60 / Endereço: Rua Sacadura Cabral, 102 - Rio de Janeiro, RJ - 20081-902 </div>
+</div>
+</body>
+</html>
